@@ -1,0 +1,129 @@
+body {
+  /* background: #9c9cec; */
+  background: linear-gradient(125deg, #5685ea, #ec9a9a, #ce7d7d00);
+}
+
+.home-link {
+  float: left;
+  color: white;
+  cursor: pointer;
+  margin: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.container {
+  margin: 2rem;
+  height: 46vh;
+  padding: 1rem;
+  /* background: rgb(32, 21, 21); */
+  border-radius: 10px;
+  color: white;
+}
+
+.site-title {
+  color: white;
+  margin: 0;
+  font-size: 25px;
+  text-align: center;
+  font-family: monospace;
+  margin-top: 5rem;
+}
+
+.desc {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.form-button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  font-weight: 800;
+  box-shadow: 2px 2px 3px 0px #7f7676;
+  color: #50556d;
+  cursor: pointer;
+  transition: box-shadow 200ms ease-in-out;
+  border-radius: 50px;
+  background: rgba(247, 244, 244, 0.911);
+  color: #50556d;
+}
+
+.form-button:hover {
+  background: #e6b9b93d;
+  color: white;
+}
+
+.form-button:active,
+.form-button:focus {
+  outline: none;
+}
+
+.section02-title {
+  margin-left: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+}
+
+.section02-container {
+  display: grid;
+  justify-content: center;
+}
+
+.container-sm {
+  width: 80vw;
+  padding: 1rem;
+  margin: 1rem;
+  background: #d2e0ec5c;
+  border-radius: 10px;
+  color: white;
+  margin: 1rem;
+  line-height: 40px;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 2px 2px;
+  background-image: repeating-linear-gradient(
+    135deg,
+    #f29b91 0px,
+    #f09290 30px,
+    transparent 30px,
+    transparent 50px,
+    #83b3db 50px,
+    #84adcb 80px,
+    transparent 80px,
+    transparent 100px
+  );
+  padding: 12px;
+}
+
+.sm-title {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-family: cursive;
+}
+
+.postcard-title {
+  margin: auto 0.5rem;
+  font-size: 1.5rem;
+}
+
+.postcard {
+  background: white;
+  padding: 1rem;
+  margin: 0;
+  text-decoration: underline;
+  color: #84868a;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 60vh;
+  }
+  .container p {
+    text-align: center;
+  }
+}

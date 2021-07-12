@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.menu ul, .menu li {
+	list-style: none;
+	margin: 0 0 20px 0;
+	padding: 0;
+}
+
+.menu {
+	position: absolute;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    padding-left: 1rem;
+}
+
+.menu li:hover {
+	 color: #808080;
+    text-decoration: underline;
+}
+
