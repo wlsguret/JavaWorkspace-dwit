@@ -1,0 +1,74 @@
+/*  Start!! aside menu_list */
+.list {
+	right: 0;
+}
+
+.menu_list {
+	list-style: none;
+	cursor: pointer;
+}
+
+.menu_list a {
+	cursor: pointer;
+	position: absolute;
+	right: -60px;
+	padding: 15px;
+	width: 100px;
+	text-decoration: none;
+	font-size: 20px;
+	transition: 0.5s;
+	color: black;
+	border-radius: 0 5px 5px 0;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+.menu_list a:hover {right: 0px;}
+
+#home {top: 260px;}
+#artist {top: 320px;}
+#notice {top: 380px;}
+#audition {top: 440px;}
+#login {top: 500px;}
+/*  End!! aside menu_list */
+/*  Start!! main Fullpage */
+.section{
+    text-align: center;   
+}
+
+.section a{
+	cursor: pointer;
+	justify-content: center;
+	text-align: center;
+	text-decoration: none;
+	color:black;
+	font-size: 35px;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section a:hover{
+    transition: 0.6s;
+}
+
+.secp{
+    position: relative;
+}
+
+.secp::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -13px;
+    width: 0px;
+    height: 2px;
+    margin: 5px 2px 0;
+    transition: all 0.2s ease-in-out;
+    transition-duration: 0.38s;
+    opacity: 0;
+    background-color: black;
+}
+
+.secp:hover::after{
+    width: 100%;
+    opacity: 1;
+}
+/*  End!! main Fullpage */
