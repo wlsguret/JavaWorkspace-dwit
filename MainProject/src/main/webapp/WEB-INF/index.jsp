@@ -18,25 +18,8 @@
 <script src="js/main.js"></script>
 </head>
 <body>
-	<!-- /////////// fullpage -->
-	<main id="fullpage">
-		<section class="section">
-			<span class="secp"><a href="/index">HOME</a></span>
-		</section>
-		<section class="section">
-			<span class="secp"><a href="/artist">ARTIST</a></span>
-		</section>
-		<section class="section">
-			<span class="secp"><a href="/notice">NOTICE</a></span>
-		</section>
-		<section class="section">
-			<span class="secp"><a href="/audition">AUDITION</a></span>
-		</section>
-		<section class="section">
-			<span class="secp"><a href="/login">LOGIN</a></span>
-		</section>
-	</main>
-	<!-- fullpage /////////// -->
+	
+	<jsp:include page="/WEB-INF/Menu${main }"/>
 	
 	<!-- /////////// aside menu_list -->
 	<aside>
