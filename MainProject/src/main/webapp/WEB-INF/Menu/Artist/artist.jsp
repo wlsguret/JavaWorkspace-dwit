@@ -5,7 +5,7 @@
 	<h1 class="menutitle">ARTIST</h1>
 
 	<div class="artistList">
-		<div class="artistImg iu"
+		<div class="artistImg"
 			style="background: url(img/IU.jpg) no-repeat;">
 			<div class="text">
 				<p>IU</p>
@@ -13,20 +13,20 @@
 
 		</div>
 
-		<div class="artistImg sohee"
+		<div class="artistImg"
 			style="background: url(img/sohee.jpg) no-repeat;">
 			<div class="text">
 				<p>SOHEE HAN</p>
 			</div>
 		</div>
 
-		<div class="artistImg junghan"
+		<div class="artistImg"
 			style="background: url(img/junghan.jpg) no-repeat;">
 			<div class="text">
 				<p>JUNGHAN</p>
 			</div>
 		</div>
-		<div class="artistImg iu"
+		<div class="artistImg"
 			style="background: url(img/IU.jpg) no-repeat;">
 			<div class="text">
 				<p>IU</p>
