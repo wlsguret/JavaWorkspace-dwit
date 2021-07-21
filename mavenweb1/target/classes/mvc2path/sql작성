@@ -1,0 +1,11 @@
+web을 만들때 첫번째 작업
+sql문에서 sql 테이블 생성하고 명령을 입력하여 잘 작동하는지 확인
+create table member(
+id varchar2(20),
+password varchar2(20));
+
+insert into member values('user','1111');
+select * from member;
+select * form member where id='user';
+update member set password='1111' where id='user';
+delete from member where id='user';

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- 어노테이션을 사용하는 컨트롤러는 일반자바파일([X]implements Controller)로 만들어 어노테이션을 선언하여 이용한다.  -->
+	<context:component-scan base-package="controller,data, board.dao"/>
+	<mvc:annotation-driven>
+	<!-- 한글 깨지는거 방지 -->
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html; charset=utf-8</value>
+					</list>
+				</property> 
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<!-- <bean name="/index" class="controller.IndexController"></bean> -->
+	
+	<!-- 모델앤뷰의 url경로를 간단하게 만들어줌 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="2" />
+		<property name="prefix" value="/WEB-INF/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<!-- webapp에 index.html 파일은 스프링 dispatcher에서 접근 불가(jsp만 가능)  -->
+	<mvc:resources location="/static/" mapping="/**"></mvc:resources>
+	
+</beans>
