@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 클래스파일 -->
+<!-- 넣어주는 값이 2개 이상이면 파라미터를 지정해줘야함 -->
+<!-- public int insert(@Param("id") String id,@Param("password")  String password); -->
 <mapper namespace="mybatis.MemberMapper">
-<insert id="insertMember">
+<insert id="insert">
 insert into member values(#{id}, #{password})
 </insert>
 <select id="select" resultType="mybatis.MemberVO">
 select * from member where id=#{id}
 </select>
-<select id="selects" resultType="map">
+<!-- resultType="map"으로 받을 수도 있음 -->
+<select id="selects" resultType="mybatis.MemberVO">
 select * from member
 </select>
-<update id="updateMameber">
+<update id="update">
 update member set password=#{password} where id=#{id}
 </update>
-<delete id="deleteMember">
+<delete id="delete">
 delete from member where id=#{id}
 </delete>
 </mapper>
