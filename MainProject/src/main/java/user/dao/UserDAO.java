@@ -36,6 +36,7 @@ public class UserDAO {
 				}
 			});
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("일치하는 유저검색결과 없음");
 		}
 		return user;

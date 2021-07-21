@@ -28,8 +28,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List select() {
-		System.out.println(dao.select());
-		return null;
+		return dao.select();
 	}
 
 	@Override

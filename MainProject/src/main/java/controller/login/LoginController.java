@@ -2,6 +2,7 @@ package controller.login;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,14 +18,15 @@ public class LoginController {
 	UserService userservice;
 	
 	@RequestMapping("/logindo")
-	public ModelAndView logindo(HttpServletRequest request, String id, String password) {
+	public ModelAndView logindo(HttpSession session, String id, String password) {
 		System.out.println("loginID:"+id+"/loginPW:"+password);
 		// id,pw 조건검색하여서 일치하면 로그인 session저장
 		UserVO user = userservice.select(id, password);
+//		System.out.println("목록:"+userservice.select());
 		System.out.println(user);
 		if(user != null) {
 			//로그인성공
-			request.getSession().setAttribute("user", user);
+			session.setAttribute("user", user);
 			System.out.println("로그인성공");
 		} else {
 			//로그인실패
@@ -36,8 +38,9 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/logout")
-	public ModelAndView logout() {
+	public ModelAndView logout(HttpSession session) {
 		// session 초기화 시켜주고 현재 페이지로 돌아가기 [파라미터로 버튼누르는시점의 url? 정보를 받아와야할 거 같음]
+		session.invalidate();
 		ModelAndView mv = new ModelAndView("index");
 		System.out.println("로그아웃");
 		mv.addObject("main", "/Home/home.jsp");
