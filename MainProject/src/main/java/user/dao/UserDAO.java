@@ -9,31 +9,46 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import user.model.UserVO;
+
 @Repository("userdao")
+@SuppressWarnings("deprecation")
 public class UserDAO {
-	
+
 	@Autowired
 	JdbcTemplate jdbc;
-	
+
 	public int insert() {
 		System.out.println("userdao:insert()");
 		return 0;
 	}
-	
-	public int select(String id) {
-		System.out.println("userdao:select(id)");
-		return 0;
+
+	public UserVO select(String id, String password) {
+		String sql = "select * from member where id=? and password=?";
+//		return jdbc.queryForObject(sql, ?값, 결과처리);
+		UserVO user = null;
+		try {
+			 user = jdbc.queryForObject(sql, new Object[] { id, password }, new RowMapper<UserVO>() {
+				@Override
+				public UserVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+					return new UserVO(rs.getString("id"), rs.getString("password"), rs.getString("email"),
+							rs.getString("name"));
+				}
+			});
+		} catch (Exception e) {
+			System.out.println("일치하는 유저검색결과 없음");
+		}
+		return user;
 	}
 
-	@SuppressWarnings({ "deprecation" })
-	public List select() {
+	public List<UserVO> select() {
 		String sql = "select * from member";
-		System.out.println("jdbc:"+jdbc);
-		return jdbc.query(sql, new Object[] {}, new RowMapper<Object>() {
+		return jdbc.query(sql, new Object[] {}, new RowMapper<UserVO>() {
 			@Override
-			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-				return rs.getString(1);
-			}			
+			public UserVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+				return new UserVO(rs.getString("id"), rs.getString("password"), rs.getString("email"),
+						rs.getString("name"));
+			}
 		});
 	}
 

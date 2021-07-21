@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>지나진혁 프로젝트</title>
+<link rel="shortcut icon" href="img/favicon.png"/>
+<link rel="icon" href="img/favicon.png"/>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
@@ -18,7 +20,6 @@
 <script src="js/main.js"></script>
 </head>
 <body>
-	
 	<jsp:include page="/WEB-INF/Menu${main }"/>
 	
 	<!-- /////////// aside menu_list -->
@@ -29,7 +30,7 @@
 				<li><a id="artist" href="/artist" data-transition="fade">ARTIST</a></li>
 				<li><a id="notice" href="/notice">NOTICE</a></li>
 				<li><a id="audition" href="/audition">AUDITION</a></li>
-				<li><a id="login" href="/login" data-transition='fade'>LOGIN</a></li>
+				<li><a id="login" href="/login" data-transition='fade'>${user.id }</a></li>
 			</ul>
 		</div>
 	</aside>

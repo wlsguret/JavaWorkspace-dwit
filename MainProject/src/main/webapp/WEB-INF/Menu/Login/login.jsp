@@ -4,7 +4,7 @@
 	<h1 class="menutitle">LOGIN</h1>
 
 	<div class="loginform">
-		<form action="/index">
+		<form action="/logindo">
 			<table>
 				<tr>
 					<td>ID</td>
@@ -21,7 +21,7 @@
 				</tr>
 				<tr>
 					<td class="kor" colspan="2"><a href="/signup">signUp</a>find <a href="idfind.html">ID</a>/<a
-						href="pwfind.html">PASSWORD</a></td>
+						href="pwfind.html">PASSWORD</a><a href="/logout">logout</a></td>
 				</tr>
 			</table>
 		</form>

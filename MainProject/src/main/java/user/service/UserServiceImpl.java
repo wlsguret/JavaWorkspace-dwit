@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import user.dao.UserDAO;
+import user.model.UserVO;
 
 @Service("userservice")
 public class UserServiceImpl implements UserService {
@@ -21,9 +22,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public int select(String id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public UserVO select(String id, String password) {
+		return dao.select(id, password);
 	}
 
 	@Override

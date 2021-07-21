@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="artistImg"
-			style="background: url(img/sohee.jpg) no-repeat;">
+			style="background: url(img/sohee.png) no-repeat;">
 			<div class="text">
 				<p>SOHEE HAN</p>
 			</div>
@@ -27,24 +27,24 @@
 			</div>
 		</div>
 		<div class="artistImg"
-			style="background: url(img/IU.jpg) no-repeat;">
+			style="background: url(img/blackpink.jpg) no-repeat;">
 			<div class="text">
-				<p>IU</p>
+				<p>BLACKPINK</p>
 			</div>
 
 		</div>
 
-		<div class="artistImg sohee"
-			style="background: url(img/sohee.jpg) no-repeat;">
+		<div class="artistImg"
+			style="background: url(img/blackpink.jpg) no-repeat;">
 			<div class="text">
-				<p>SOHEE HAN</p>
+				<p>BLACKPINK</p>
 			</div>
 		</div>
 
-		<div class="artistImg junghan"
-			style="background: url(img/junghan.jpg) no-repeat;">
+		<div class="artistImg"
+			style="background: url(img/vernon.png) no-repeat;">
 			<div class="text">
-				<p>JUNGHAN</p>
+				<p>BLACKPINK</p>
 			</div>
 		</div>
 	</div>

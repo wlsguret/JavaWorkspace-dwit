@@ -2,10 +2,12 @@ package user.service;
 
 import java.util.List;
 
+import user.model.UserVO;
+
 public interface UserService {
 	
 	int insert();
-	int select(String id);
+	UserVO select(String id, String password);
 	List select();
 	int update();
 	int delete();
