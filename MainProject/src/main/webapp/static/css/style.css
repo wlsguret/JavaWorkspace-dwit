@@ -1,6 +1,9 @@
 body{
 	overflow-x:hidden;
 }
+/* 22 */
+a{ text-decoration: none;}
+ul,li { list-style: none;}
 
 .menutitle {
     display: flex;
@@ -16,18 +19,12 @@ body{
 	right: 0;
 }
 
-.menu_list {
-	list-style: none;
-	cursor: pointer;
-}
-
 .menu_list a {
 	cursor: pointer;
 	position: absolute;
 	right: -60px;
 	padding: 15px;
 	width: 100px;
-	text-decoration: none;
 	font-size: 20px;
 	transition: 0.5s;
 	color: black;
@@ -52,7 +49,6 @@ body{
 	cursor: pointer;
 	justify-content: center;
 	text-align: center;
-	text-decoration: none;
 	color:black;
 	font-size: 35px;
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -85,6 +81,52 @@ body{
     opacity: 1;
 }
 /*  End!! main Fullpage */
+/*  Start!! footer.jsp */
+footer{
+    display: inline;
+    float: left;
+    width:100%;
+    height: 30vh;
+    padding-top: 10vh;
+    text-align: center;
+}
+
+footer i{
+    margin:10px 6px;
+}
+footer p{
+    
+    color:gray;
+}
+footer small a{
+    color:gray;
+}
+footer small a:hover{
+    color:rgb(97, 97, 97);
+}
+
+#insta{
+    font-size: 34px;
+}
+#face{
+    font-size: 33px;
+}
+#twitter{
+    font-size: 33px;
+}
+footer i:hover{
+    cursor: pointer;
+}
+footer ul{
+    display: inline;
+}
+footer ul li{
+    display: inline;
+}
+.footlink{
+    color:rgb(95, 95, 95);
+}
+/*  End!! footer.jsp */
 /*  Start!! artist.jsp */
 
 .artistList{
@@ -120,21 +162,47 @@ body{
 /*  End!! artist.jsp */
 /*  Start!! audition.jsp */
 .audition li{
-            list-style: none;
-            display: inline-block;
-            width: calc(70%/ 4);
-            vertical-align: top;
-            padding: 5px;
-            height: 400px;
-            margin-left: 7%;
-            border: 1px solid gray;
-            box-sizing: border-box;
-            margin-left: 100px;
-            text-align: center;
-            line-height: 400px;
-        }
+    display: inline-block;
+    width: calc(70%/ 4);
+    vertical-align: top;
+    padding: 5px;
+    height: 400px;
+    margin-left: 7%;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    margin-left: 100px;
+    text-align: center;
+    line-height: 400px;
+}
 /*  End!! audition.jsp */
+/*  Start!! login_menu */
+.login_menu{
+    width:30%;
+    float: left;
+}
+.login_menu ul{
+    color: lightgray;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    padding: 0 150px;   
+}
+
+.login_menu ul li{
+    padding: 20px;
+    display: flex;   
+}
+.login_menu ul li a{
+    color:rgb(114, 114, 114);
+}
+.login_menu ul li a:hover{
+    color:rgb(35, 35, 35);
+}
+/*  End!! login_menu */
 /*  Start!! login.jsp */
+.loginform {
+	width: 70%
+}
 .loginform table{
     display: flex;
     justify-content: center;
@@ -147,7 +215,6 @@ body{
     padding: 20px;
     margin: 20px;
 }
-
 .loginform .kor{
     font-size: 15px;        
     text-align: right;
@@ -164,7 +231,88 @@ body{
     margin: 0 32px;
 }
 .loginform a{
-    text-decoration: none;
     color: gray;
 }
 /*  End!! login.jsp */
+/*  Start!! signup.jsp */
+.signup_form{
+    width:70%;
+    float:left;
+}
+.signup_table{
+    width:60%;
+}
+.signup_table td{
+    padding:20px;
+    background-color: rgb(236, 236, 236);
+}
+#signup_last{
+    text-align: center;
+    border: rgb(236, 236, 236);
+}
+#okb{
+    background-color: gray;
+    color:white;
+    width:24%;
+    height: 30px;
+    border: none;
+}
+#signup_last button span{
+position:relative;
+}
+
+#nokb{
+    background-color: rgb(206, 206, 206);
+    color:white;
+    width:20%;
+    height: 30px;
+    border:none;
+}
+#okb:hover{
+    cursor: pointer;
+}
+#nokb:hover{
+    cursor: pointer;
+}
+/*  End!! signup.jsp */
+/*  Start!! find.jsp */
+.forget_sec{
+    float: left;
+    padding-left: 150px;
+}
+#fyear{
+    width:50px;
+}
+.findid{
+    color:rgb(56, 56, 56)
+}
+.forgt{
+    margin:20px;
+    background-color: rgb(240, 240, 240);
+    padding:20px 50px;
+}
+.forgt td{
+    margin:50px;
+    padding:10px;
+    text-align: center;
+}
+.centerline{
+    border-bottom: 1px solid white;
+
+}
+#forbirthb{
+    background-color: gray;
+    color:white;
+    border:none;
+    padding:5px;
+    cursor: pointer;
+}
+
+#foreb{
+    background-color: gray;
+    color:white;
+    border:none;
+    padding:5px;
+    cursor: pointer;
+}
+/*  End!! find.jsp */

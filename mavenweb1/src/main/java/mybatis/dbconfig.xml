@@ -6,7 +6,7 @@
 	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-<!-- mybatis를 사용하기 위해 필요한 라이브러리 무엇이 있는지? -->
+<!-- mybatis를 사용하기 위해 필요한 라이브러리 무엇이 있는지? mybatis, mybatis-spring -->
 <!-- datasource(Connection 객체를 얻기 위해) -->
 <!-- hikariConfig, hikariDataSource, org.mybatis.spring.SqlSessionFactoryBean -->
 

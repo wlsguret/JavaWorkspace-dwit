@@ -1,37 +1,26 @@
 package user.model;
 
+import java.util.Date;
+
 public class UserVO {
 	
-	private String id;
-	private String password;
 	private String email;
+	private String password;
 	private String name;
+	private Date birthday;
+	private String gender;
 	
 	public UserVO() {
-	
+		System.out.println("기본생성자 유저");
 	}
 
-	public UserVO(String id, String password, String email, String name) {
-		this.id = id;
-		this.password = password;
+	public UserVO(String email, String password, String name, Date birthday, String gender) {
+		System.out.println("주입생성자 유저");
 		this.email = email;
-		this.name = name;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
 		this.password = password;
+		this.name = name;
+		this.birthday = birthday;
+		this.gender = gender;
 	}
 
 	public String getEmail() {
@@ -42,6 +31,14 @@ public class UserVO {
 		this.email = email;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -50,9 +47,26 @@ public class UserVO {
 		this.name = name;
 	}
 
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	@Override
 	public String toString() {
-		return "UserVO [id=" + id + ", password=" + password + ", email=" + email + ", name=" + name + "]";
+		return "UserVO [email=" + email + ", password=" + password + ", name=" + name + ", birthday=" + birthday
+				+ ", gender=" + gender + "]";
 	}
-	
+
 }

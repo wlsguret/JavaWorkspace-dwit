@@ -1,7 +1,6 @@
 package controller.login;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -16,25 +15,26 @@ public class LoginController {
 	
 	@Resource(name = "userservice")
 	UserService userservice;
+
+	@RequestMapping("/login")
+	public ModelAndView login() {
+		ModelAndView mv = new ModelAndView("index");
+		mv.addObject("main", "/Login/login.jsp");
+		return mv;
+	}
 	
 	@RequestMapping("/logindo")
-	public ModelAndView logindo(HttpSession session, String id, String password) {
-		System.out.println("loginID:"+id+"/loginPW:"+password);
+	public String logindo(HttpSession session, String email, String password) {
+		System.out.println("loginID:"+email+"/loginPW:"+password);
 		// id,pw 조건검색하여서 일치하면 로그인 session저장
-		UserVO user = userservice.select(id, password);
-//		System.out.println("목록:"+userservice.select());
-		System.out.println(user);
+		UserVO user = userservice.select(email, password);
 		if(user != null) {
-			//로그인성공
 			session.setAttribute("user", user);
-			System.out.println("로그인성공");
+			System.out.println("로그인성공:"+user);
 		} else {
-			//로그인실패
 			System.out.println("로그인실패");
 		}
-		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("main", "/Home/home.jsp");
-		return mv;
+		return "forward:home";
 	}
 	
 	@RequestMapping("/logout")
@@ -60,6 +60,13 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView("index");
 		System.out.println("가입성공");
 		mv.addObject("main", "/Home/home.jsp");
+		return mv;
+	}
+	
+	@RequestMapping("/find")
+	public ModelAndView find() {
+		ModelAndView mv = new ModelAndView("index");
+		mv.addObject("main", "/Login/find.jsp");
 		return mv;
 	}
 }

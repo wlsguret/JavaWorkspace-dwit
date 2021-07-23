@@ -11,7 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 		ApplicationContext ctx = new GenericXmlApplicationContext("config/dbconfig.xml");
 		UserService service =  (UserServiceImpl) ctx.getBean("userservice");
-		service.select();
+		service.list();
 	
 	
 	}

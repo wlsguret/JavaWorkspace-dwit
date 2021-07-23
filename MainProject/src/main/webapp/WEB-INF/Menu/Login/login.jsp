@@ -2,13 +2,19 @@
 	pageEncoding="UTF-8"%>
 <main>
 	<h1 class="menutitle">LOGIN</h1>
-
+	 <aside class = "login_menu">
+        <ul>
+            <li><a href="/login">LOGIN</a></li>
+            <li><a href="/find">FORGOT ACCOUNT</a></li>
+            <li><a href="/signup">REGISTER</a></li>
+        </ul>
+    </aside>
 	<div class="loginform">
 		<form action="/logindo">
 			<table>
 				<tr>
 					<td>ID</td>
-					<td><input type="text" name="id" id="id" placeholder="ID"
+					<td><input type="text" name="email" id="email" placeholder="ID"
 						style="padding: 5px;"></td>
 				</tr>
 				<tr>

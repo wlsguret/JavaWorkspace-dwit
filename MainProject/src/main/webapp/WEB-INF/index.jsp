@@ -22,25 +22,7 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/Menu${main }"/>
-	
-	<!-- /////////// aside menu_list -->
-	<aside>
-		<div class="list">
-			<ul class="menu_list">
-				<li><a id="home" href="/index">HOME</a></li>
-				<li><a id="artist" href="/artist" data-transition="fade">ARTIST</a></li>
-				<li><a id="notice" href="/notice">NOTICE</a></li>
-				<li><a id="audition" href="/audition">AUDITION</a></li>
-				<c:if test="${empty user}">
-				<li><a id="login" href="/login" data-transition='fade'>LOGIN</a></li>
-				</c:if>
-				<c:if test="${not empty user}">
-				<li><a id="login" href="/logout" data-transition='fade'>LOGOUT</a></li>
-				</c:if>
-			</ul>
-		</div>
-	</aside>
-	<!-- aside menu_list /////////// -->
-	<footer class="section"> </footer>
+	<jsp:include page="/WEB-INF/Menu/Home/aside.jsp"/>
+	<jsp:include page="/WEB-INF/Menu/Home/footer.jsp"/>
 </body>
 </html>
