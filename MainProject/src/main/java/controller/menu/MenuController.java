@@ -41,11 +41,5 @@ public class MenuController {
 		mv.addObject("main", "/Audition/audition.jsp");
 		return mv;
 	}
-	
-//	@RequestMapping("/login")
-//	public ModelAndView login() {
-//		ModelAndView mv = new ModelAndView("index");
-//		mv.addObject("main", "/Login/login.jsp");
-//		return mv;
-//	}
+
 }

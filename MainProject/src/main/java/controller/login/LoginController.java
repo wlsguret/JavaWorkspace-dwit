@@ -1,5 +1,7 @@
 package controller.login;
 
+import java.util.Date;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -27,14 +29,15 @@ public class LoginController {
 	public String logindo(HttpSession session, String email, String password) {
 		System.out.println("loginID:"+email+"/loginPW:"+password);
 		// id,pw 조건검색하여서 일치하면 로그인 session저장
-		UserVO user = userservice.select(email, password);
+		UserVO user = userservice.userLogin(email, password);
 		if(user != null) {
 			session.setAttribute("user", user);
 			System.out.println("로그인성공:"+user);
+			return "redirect:home";
 		} else {
 			System.out.println("로그인실패");
+			return "redirect:login";
 		}
-		return "forward:home";
 	}
 	
 	@RequestMapping("/logout")
@@ -54,17 +57,62 @@ public class LoginController {
 		return mv;
 	}
 	
+	@SuppressWarnings("deprecation")
 	@RequestMapping("/signupdo")
-	public ModelAndView signupdo() {
-		userservice.insert(); // 함수구현해야댐
+	public ModelAndView signupdo(String email, String password, String name,
+			int year, int mm, int dd, String gender, String ok, String agreement) {
+		Date birthday = null;
+		birthday= new Date(year, mm, dd);
+		UserVO user = new UserVO(email, password, name, birthday, gender);
+		System.out.println(user);
+		userservice.userInsert(user);
 		ModelAndView mv = new ModelAndView("index");
 		System.out.println("가입성공");
 		mv.addObject("main", "/Home/home.jsp");
 		return mv;
 	}
+
+	@RequestMapping("/checkemail")
+	public ModelAndView checkemail(String email) {
+		UserVO user = userservice.checkEmail(email);
+		System.out.println(user);
+		if(user != null) {
+			
+		}
+		ModelAndView mv = new ModelAndView("index");
+		mv.addObject("main", "/Login/signup.jsp");
+		return mv;
+	}
 	
 	@RequestMapping("/find")
 	public ModelAndView find() {
+		ModelAndView mv = new ModelAndView("index");
+		mv.addObject("main", "/Login/find.jsp");
+		return mv;
+	}
+	
+	@RequestMapping("/finddo")
+	public ModelAndView finddo(String femail) {
+		UserVO user = userservice.checkEmail(femail);
+		if(user != null) {
+			System.out.println("검색된 유저:"+user);			
+		} else {
+			System.out.println("일치하는 이메일 없음");
+		}
+		ModelAndView mv = new ModelAndView("index");
+		mv.addObject("main", "/Login/find.jsp");
+		return mv;
+	}
+	
+	@RequestMapping("/withdrawal")
+	public ModelAndView withdrawal(String email) {
+		int result = userservice.userDelete(email);
+		if(result >0) {
+			System.out.println(email+" 회원탈퇴");
+		} else {
+			System.out.println("회원탈퇴 실패 일치하는 유저 없음");
+		}
+
 		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("main", "/Login/find.jsp");
 		return mv;

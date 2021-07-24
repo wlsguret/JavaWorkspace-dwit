@@ -16,7 +16,9 @@ ul,li { list-style: none;}
 }
 /*  Start!! aside menu_list */
 .list {
+	position: fixed;
 	right: 0;
+	top: 0;
 }
 
 .menu_list a {
@@ -241,6 +243,7 @@ footer ul li{
 }
 .signup_table{
     width:60%;
+    min-width: 640px;
 }
 .signup_table td{
     padding:20px;
@@ -250,33 +253,32 @@ footer ul li{
     text-align: center;
     border: rgb(236, 236, 236);
 }
-#okb{
+#signup_last button span{
+position:relative;
+}
+#signup_last input {
+	cursor: pointer;
+}
+#signupbtn{
     background-color: gray;
     color:white;
     width:24%;
     height: 30px;
     border: none;
 }
-#signup_last button span{
-position:relative;
-}
 
-#nokb{
+#cancelbtn{
     background-color: rgb(206, 206, 206);
     color:white;
     width:20%;
     height: 30px;
     border:none;
 }
-#okb:hover{
-    cursor: pointer;
-}
-#nokb:hover{
-    cursor: pointer;
-}
 /*  End!! signup.jsp */
 /*  Start!! find.jsp */
 .forget_sec{
+	box-sizing:border-box;
+	width: 70%;
     float: left;
     padding-left: 150px;
 }
@@ -287,7 +289,7 @@ position:relative;
     color:rgb(56, 56, 56)
 }
 .forgt{
-    margin:20px;
+	min-width: 450px;
     background-color: rgb(240, 240, 240);
     padding:20px 50px;
 }
@@ -300,7 +302,7 @@ position:relative;
     border-bottom: 1px solid white;
 
 }
-#forbirthb{
+.forgetBtn{
     background-color: gray;
     color:white;
     border:none;
@@ -308,11 +310,4 @@ position:relative;
     cursor: pointer;
 }
 
-#foreb{
-    background-color: gray;
-    color:white;
-    border:none;
-    padding:5px;
-    cursor: pointer;
-}
 /*  End!! find.jsp */

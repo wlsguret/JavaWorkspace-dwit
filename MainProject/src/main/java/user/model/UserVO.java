@@ -10,12 +10,9 @@ public class UserVO {
 	private Date birthday;
 	private String gender;
 	
-	public UserVO() {
-		System.out.println("기본생성자 유저");
-	}
+	public UserVO() {	}
 
 	public UserVO(String email, String password, String name, Date birthday, String gender) {
-		System.out.println("주입생성자 유저");
 		this.email = email;
 		this.password = password;
 		this.name = name;
