@@ -20,8 +20,8 @@
 					<td colspan="2"><input type="submit" class="ok" value="LOGIN"></td>
 				</tr>
 				<tr>
-					<td class="kor" colspan="2"><a href="/signup">signUp</a>find <a href="idfind.html">ID</a>/<a
-						href="pwfind.html">PASSWORD</a><a href="/logout">logout</a></td>
+					<td class="kor" colspan="2"><a href="/signup">signUp</a>find <a href="/find">ID</a>/<a
+						href="/find">PASSWORD</a><a href="/logout">logout</a></td>
 				</tr>
 			</table>
 		</form>

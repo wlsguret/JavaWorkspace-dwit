@@ -1,5 +1,6 @@
 package user.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,13 +35,22 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public int userUpdate() {
-		return 0;
+	public List<UserVO> findEmail(String name, String birthday) {
+		return mapper.findEmail(name, birthday);
+	}
+	
+	@Override
+	public int userPwdUpdate(String email, String password) {
+		return mapper.userPwdUpdate(email, password);
 	}
 
 	@Override
 	public int userDelete(String email) {
 		return mapper.userDelete(email);
 	}
+
+	
+
+	
 
 }

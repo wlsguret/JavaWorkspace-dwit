@@ -1,5 +1,6 @@
 package user.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -12,6 +13,7 @@ public interface UserMapper {
 	UserVO checkEmail(String email);
 	UserVO userLogin(@Param("email") String email, @Param("password") String password);
 	List<UserVO> userList();
-	int userUpdate();
+	List<UserVO> findEmail(@Param("name") String name, @Param("birthday") String birthday);
+	int userPwdUpdate(@Param("email") String email, @Param("password") String password);
 	int userDelete(String email);	
 }

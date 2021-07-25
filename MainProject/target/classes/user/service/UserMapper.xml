@@ -13,8 +13,11 @@
 	<select id="userList" resultType="user.model.UserVO">
 		select * from member
 	</select>
-	<update id="userUpdate">
-		update member set password=#{password} where id=#{id}
+	<select id="findEmail" resultType="user.model.UserVO">
+		select * from member where name=#{name} and birthday=#{birthday}
+	</select>
+	<update id="userPwdUpdate">
+		update member set password=#{password} where email=#{email}
 	</update>
 	<delete id="userDelete">
 		delete from member where email=#{email}

@@ -3,7 +3,7 @@
 <%@taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript">
 /* 구현해야 할 스크립트 내용 
-	1. 가입하기 버튼 클릭시 submit()
+	1. 가입하기 버튼 클릭시 submit() @@@
 	2. 이메일 중복확인 버튼 클릭시 db에 해당 이메일 검색
 	3. 비밀번호와 비밀번호확인이 일치하지 않을시 옆에 메시지 나타내기 불일치 상태에서 가입클릭시 알림창 후 포커스 맞추기
 	4. 필수 정보 미입력시 알림창 후 포커스 [이메일, 비밀번호, 이름, 개인정보동의, 중복확인, 비밀번호 일치]
@@ -11,13 +11,6 @@
 	5. 비밀번호 제약사항 걸기 영문 대소문, 숫자, 특수문자 포함(6~32자리)
 	6. 시간되면 나중에 메일 보내는 거 해서 문자확인까지
 */
-/* window.onload = function(){
-	document.getElementById('okb').onclick = function(){
-		document.getElementById('signupform').submit();
-		return false;
-	}
-}
- */
  function signup(){
 	 if()
 	 document.getElementById('signupform').submit();
@@ -34,7 +27,7 @@
 	<section class = "signup_form">
 	    <h1>회원가입</h1>
 	    <p>WELCOME TO YELLOWLAB!</p>
-	    <form action="/signupdo" method="get" id="signupform">
+	    <form action="/signupdo" method="get" id="signupform" onsubmit="">
 	    <table class = "signup_table">
 	        <tr>
 	            <td>이메일주소</td>
@@ -47,7 +40,7 @@
 	            </select>
 	            <input type="button" value = "중복확인" onclick="checkemail()"><br>
 	            <small>이메일은 아이디로 사용되며, 확인 이메일이 발송됩니다.</small><br>
-	            <small>이미 등록된 이메일이라면 </small><input type="button" value="확인하기">
+	            <small>이미 등록된 이메일이라면 </small><input type="button" value="확인하기" onclick="location.href='/find'">
 	            </td>
 	        </tr>
 	        <tr>
