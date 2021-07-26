@@ -14,28 +14,44 @@ public class UserServiceImpl implements UserService {
 	UserMapper mapper;
 	
 	@Override
-	public int insert() {
-		return mapper.insert();
+	public int userInsert(UserVO user) {
+		return mapper.userInsert(user);
 	}
 
 	@Override
-	public UserVO select(String email, String password) {
-		return mapper.select(email, password);
+	public UserVO checkEmail(String email) {
+		return mapper.checkEmail(email);
 	}
 
 	@Override
-	public List<UserVO> list() {
-		return mapper.list();
+	public UserVO userLogin(String email, String password) {
+		return mapper.userLogin(email, password);
 	}
 
 	@Override
-	public int update() {
-		return mapper.update();
+	public List<UserVO> userList() {
+		return mapper.userList();
 	}
 
 	@Override
-	public int delete() {
-		return mapper.delete();
+	public List<UserVO> findEmail(String name, String birthday) {
+		return mapper.findEmail(name, birthday);
 	}
+	
+	@Override
+	public UserVO findPassword(String email, String birthday) {
+		return mapper.findPassword(email, birthday);
+	}
+	
+	@Override
+	public int userPwdUpdate(String email, String password) {
+		return mapper.userPwdUpdate(email, password);
+	}
+
+	@Override
+	public int userDelete(String email) {
+		return mapper.userDelete(email);
+	}
+
 
 }

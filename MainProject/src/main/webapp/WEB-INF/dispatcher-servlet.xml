@@ -25,13 +25,14 @@
 	<context:property-placeholder location="classpath:config/db.properties"/>
 	<!-- Connection 생성 db접속 -->
 	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	<property name="driverClassName" value="${db1.driverClassName}"/>
-	<property name="url" value="${db1.url}"/>
-	<property name="username" value="${db1.username}"/>
-	<property name="password" value="${db1.password}"/>
+		<property name="driverClassName" value="${db1.driverClassName}"/>
+		<property name="url" value="${db1.url}"/>
+		<property name="username" value="${db1.username}"/>
+		<property name="password" value="${db1.password}"/>
 	</bean>
 	<!-- sql처리를 위한 목적 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-	<property name="dataSource" ref="datasource"/>
+		<property name="dataSource" ref="datasource"/>
+		<property name="configLocation" value="classpath:config/mybatis-config.xml"/>
 	</bean>
 </beans>

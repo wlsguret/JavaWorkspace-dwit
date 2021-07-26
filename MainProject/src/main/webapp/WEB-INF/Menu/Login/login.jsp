@@ -2,13 +2,7 @@
 	pageEncoding="UTF-8"%>
 <main>
 	<h1 class="menutitle">LOGIN</h1>
-	 <aside class = "login_menu">
-        <ul>
-            <li><a href="/login">LOGIN</a></li>
-            <li><a href="/find">FORGOT ACCOUNT</a></li>
-            <li><a href="/signup">REGISTER</a></li>
-        </ul>
-    </aside>
+	<jsp:include page="/WEB-INF/Menu/Login/login_menu.jsp"/>
 	<div class="loginform">
 		<form action="/logindo">
 			<table>
@@ -26,8 +20,8 @@
 					<td colspan="2"><input type="submit" class="ok" value="LOGIN"></td>
 				</tr>
 				<tr>
-					<td class="kor" colspan="2"><a href="/signup">signUp</a>find <a href="idfind.html">ID</a>/<a
-						href="pwfind.html">PASSWORD</a><a href="/logout">logout</a></td>
+					<td class="kor" colspan="2"><a href="/signup">signUp</a>find <a href="/find">ID</a>/<a
+						href="/find">PASSWORD</a><a href="/logout">logout</a></td>
 				</tr>
 			</table>
 		</form>

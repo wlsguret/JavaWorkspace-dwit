@@ -4,8 +4,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository("mysqldao")
 public class mysqlDAO  implements DAO{
-public void insert() {
+public int insert() {
 	System.out.println("mysql insert");
+	return 1;
 }
 public void select() {
 	System.out.println("mysql select");

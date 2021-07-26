@@ -4,8 +4,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository("oracledao")
 public class OracleDAO  implements DAO{
-public void insert() {
+public int insert() {
 	System.out.println("oracle insert");
+	return 1;
 }
 public void select() {
 	System.out.println("oracle select");

@@ -11,7 +11,7 @@
 	<task:annotation-driven/>
 	
 	<!-- 어노테이션을 사용하는 컨트롤러는 일반자바파일([X]implements Controller)로 만들어 어노테이션을 선언하여 이용한다.  -->
-	<context:component-scan base-package="controller,data, board.dao,scheduler"/>
+	<context:component-scan base-package="controller,data, board.dao,scheduler, mvc2path.*"/>
 	<mvc:annotation-driven>
 	<!-- 한글 깨지는거 방지 -->
 		<mvc:message-converters>
