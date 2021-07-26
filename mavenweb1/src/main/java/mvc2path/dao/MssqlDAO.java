@@ -4,8 +4,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository("mssqldao")
 public class MssqlDAO implements DAO{
-public void insert() {
+public int insert() {
 	System.out.println("mssql insert");
+	return 1;
 }
 public void select() {
 	System.out.println("mssql select");

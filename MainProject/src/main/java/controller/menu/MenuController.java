@@ -28,12 +28,12 @@ public class MenuController {
 		return mv;
 	}
 	
-	@RequestMapping("/notice")
-	public ModelAndView notice() {
-		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("main", "/Notice/notice.jsp");
-		return mv;
-	}
+//	@RequestMapping("/notice")
+//	public ModelAndView notice() {
+//		ModelAndView mv = new ModelAndView("index");
+//		mv.addObject("main", "/Notice/notice.jsp");
+//		return mv;
+//	}
 	
 	@RequestMapping("/audition")
 	public ModelAndView audition() {

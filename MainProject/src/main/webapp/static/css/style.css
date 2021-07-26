@@ -1,7 +1,7 @@
 body{
 	overflow-x:hidden;
 }
-/* 22 */
+
 a{ text-decoration: none;}
 ul,li { list-style: none;}
 
@@ -311,3 +311,51 @@ position:relative;
 }
 
 /*  End!! find.jsp */
+/*  Start!! findEmail.jsp */
+.logindiv{
+	width: 40%;
+	display: inline-block;
+	
+}
+.idfind{
+    display: flex;
+    justify-content: center;
+}
+
+.idfind tr{
+    background-color: rgb(238, 238, 238);
+    justify-content: center;
+}
+.idfind td{
+	padding: 50px    
+} 
+
+.idfind td h3{
+    border-bottom: 1px solid rgb(150, 150, 150);
+    padding:20px 0;
+}
+
+.loginb{
+    background-color: gray;
+    color:white;
+    font-size: 15px;
+    padding:6px;
+    border: none;
+    cursor: pointer;
+    margin:5px;
+}
+
+.nonfb{
+    background-color: rgb(192, 192, 192);
+    font-size: 15px;
+    padding:6px;
+    border:none;
+    cursor:pointer;
+    margin:5px;
+}
+
+#but{
+    display: flex;
+    justify-content: center;
+}
+/*  End!! findEmail.jsp */

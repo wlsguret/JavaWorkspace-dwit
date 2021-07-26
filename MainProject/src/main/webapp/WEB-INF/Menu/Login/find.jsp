@@ -15,9 +15,9 @@
 	            <tr>
 	                <td><small>생년월일</small></td>
 	                <td>
-	                    <input type="text" name="fyear" id="fyear" placeholder="년도">
+	                    <input type="text" name="fyear" id="fyear" placeholder="년도" required>
 	                    <span class="fmm">
-	                        <select name="fmm" id="fmm">
+	                        <select name="fmm" id="fmm" required>
 	                            <option value="00">월</option>
 	                            <c:forEach var="i" begin="1" end="9">
 		                        	<option value="0${i }">${i }</option>
@@ -29,7 +29,7 @@
 	                    </span>
 	
 	                    <span id = "fdd">
-	                        <select name="fdd" id="fdd">
+	                        <select name="fdd" id="fdd" required>
 		                        <option value="00">일</option>
 		                        <c:forEach var="i" begin="1" end="9">
 		                   	    	<option value="0${i }">${i }</option>
@@ -51,37 +51,43 @@
 	            </tr>
 			</table>
 		</form>
-		<form action="">
+		<form action="/findPassword">
 			<table class = "forgt">
 	            <tr>
 	                <td><small>이메일</small></td>
-	                <td><input type="email" name="femail" id="femail" placeholder="이메일을 입력하세요."></td>
+	                <td><input type="email" name="femail" id="femail" placeholder="이메일을 입력하세요." required></td>
 	            </tr>
 	            <tr>
 	                <td><small>생년월일</small></td>
 	                <td>
-	                    <input type="text" name="fyear" id="fyear" placeholder="년도">
+	                    <input type="text" name="fyear" id="fyear" placeholder="년도" required>
 	                    <span class="fmm">
-	                        <select id="fmm">
-	                            <option>월</option>
-	                            <c:forEach var="i" begin="1" end="12">
+	                        <select name="fmm" id="fmm" required>
+	                            <option value="00">월</option>
+	                            <c:forEach var="i" begin="1" end="9">
+		                        	<option value="0${i }">${i }</option>
+		                        </c:forEach>
+		                        <c:forEach var="i" begin="10" end="12">
 		                        	<option value="${i }">${i }</option>
 		                        </c:forEach>
 	                        </select>
 	                    </span>
 	
 	                    <span id = "fdd">
-	                        <select name="fdd" id="fdd">
-	                        <option>일</option>
-	                        <c:forEach var="i" begin="1" end="31">
-	                   	    	<option value="${i }">${i }</option>
-		                    </c:forEach>
+	                        <select name="fdd" id="fdd" required>
+		                        <option value="00">일</option>
+		                        <c:forEach var="i" begin="1" end="9">
+		                   	    	<option value="0${i }">${i }</option>
+			                    </c:forEach>
+			                    <c:forEach var="i" begin="10" end="31">
+		                   	    	<option value="${i }">${i }</option>
+			                    </c:forEach>
 	                        </select>
 	                    </span>
 	                </td>
 	            </tr>
 	            <tr>
-	                <td colspan="2"><input type="button" class="forgetBtn" value="비밀번호 찾기 >"></td>
+	                <td colspan="2"><input type="submit" class="forgetBtn" value="비밀번호 찾기 >"></td>
 	            </tr>
 	            <tr>
 	                <td colspan="2" class = "centerline"/>      

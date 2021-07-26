@@ -16,6 +16,9 @@
 	<select id="findEmail" resultType="user.model.UserVO">
 		select * from member where name=#{name} and birthday=#{birthday}
 	</select>
+	<select id="findPassword" resultType="user.model.UserVO">
+		select * from member where email=#{email} and birthday=#{birthday}
+	</select>
 	<update id="userPwdUpdate">
 		update member set password=#{password} where email=#{email}
 	</update>

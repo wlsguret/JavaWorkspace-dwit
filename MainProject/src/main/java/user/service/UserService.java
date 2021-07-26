@@ -1,6 +1,5 @@
 package user.service;
 
-import java.util.Date;
 import java.util.List;
 
 import user.model.UserVO;
@@ -12,6 +11,7 @@ public interface UserService {
 	UserVO userLogin(String email, String password);
 	List<UserVO> userList();
 	List<UserVO> findEmail(String name, String birthday);
+	UserVO findPassword(String email, String birthday);
 	int userPwdUpdate(String email, String password);
 	int userDelete(String email);
 }
