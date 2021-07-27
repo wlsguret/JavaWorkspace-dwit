@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 
 import board.model.BoardVO;
 
-@Service("noticeService")
-public class BoardService_Notice implements BoardService {
+@Service("communityService")
+public class BoardService_Community implements BoardService {
 	
 	@Autowired
 	BoardMapper mapper;
-	private String tName = "notice";
+	private String tName = "Community";
 	
 	@Override
 	public int boardInsert(BoardVO board) {
