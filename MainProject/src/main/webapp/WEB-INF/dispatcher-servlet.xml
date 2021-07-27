@@ -9,9 +9,9 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	<!-- 패키지를 메모리에 올림 -->
-	<context:component-scan base-package="controller.* user.*"/>
+	<context:component-scan base-package="controller.* user.* board.*"/>
 	<mvc:annotation-driven/>
-	<mybatis-spring:scan base-package="user.service"/>
+	<mybatis-spring:scan base-package="user.service board.service"/>
 	<!-- ModelAndView의 view경로의 앞뒤로 문자열을 붙여주는 설정 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="order" value="2"/>

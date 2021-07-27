@@ -15,4 +15,16 @@ public class Advice {
 	public void after() {
 		System.out.println("after exe");
 	}
+	
+	public void returning() {
+		System.out.println("returning");
+	}
+	
+	public void throwing() {
+		System.out.println("throwing");
+	}
+	
+	public void around() {
+		System.out.println("around");
+	}
 }

@@ -9,8 +9,8 @@ public class Main {
 //		System.out.println(ctx.getBean("advice"));
 		Exe exe = (Exe) ctx.getBean("exe");
 		exe.exe1();
-		exe.exe2();
-		exe.exe3();
+//		exe.exe2();
+//		exe.exe3();
 
 	}
 

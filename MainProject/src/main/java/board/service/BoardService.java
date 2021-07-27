@@ -1,5 +1,14 @@
 package board.service;
 
-public interface BoardService {
+import java.util.List;
 
+import board.model.BoardVO;
+
+public interface BoardService {
+	
+	int boardInsert(BoardVO board);
+	BoardVO boardSelect(int idx);
+	List<BoardVO> boardList();
+	int boardUpdate(int idx, String title, String content);
+	int boardDelete(int idx);
 }

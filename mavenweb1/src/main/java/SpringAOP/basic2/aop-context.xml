@@ -13,6 +13,9 @@
 		<aop:pointcut expression="execution(public void SpringAOP.basic2.*.*())" id="pointcut"/>
 		<aop:before method="before" pointcut-ref="pointcut"/>
 		<aop:after method="after" pointcut-ref="pointcut"/>
+		<aop:after-returning method="returning" pointcut-ref="pointcut"/>
+		<aop:after-throwing method="throwing" pointcut-ref="pointcut"/>
+		<!-- <aop:around method="around" pointcut-ref="pointcut"/> --> <!-- 실행함수를 대체하여 실행됨 proc 배워야 이해가능하다고 하심 -->
 	</aop:aspect>
 </aop:config>
 </beans>
