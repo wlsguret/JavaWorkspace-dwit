@@ -57,3 +57,5 @@ insert into notice values(notice_idx_seq.nextval,notice_groupId_seq.nextval,0,0,
 select * from notice;
 
 commit;
+
+수정사항 만들기
