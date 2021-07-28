@@ -16,6 +16,12 @@ public class BoardService_Notice implements BoardService {
 	
 	@Override
 	public int boardInsert(BoardVO board) {
+		if(true) {
+			mapper.boardInsert(tName, board);
+		} else {
+			mapper.boardDelete(tName, 0);
+		}
+		mapper.boardList(tName);
 		return 0;
 	}
 
