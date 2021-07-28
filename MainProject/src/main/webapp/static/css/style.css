@@ -354,8 +354,35 @@ position:relative;
     margin:5px;
 }
 
-#but{
+.but{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+/*  End!! findEmail.jsp */
+/*  Start!! findPassword.jsp */
+
+.pwfind{
     display: flex;
     justify-content: center;
 }
-/*  End!! findEmail.jsp */
+.pwfind td{
+    background-color: rgb(238, 238, 238);
+    padding:30px 20px;
+}
+
+.pwchange{
+    background-color: gray;
+    color:white;
+    border: none;
+    padding:8px;
+    cursor: pointer;
+}
+
+.chanc{
+    background-color: lightgray;
+    color:black;
+    border: none;
+    padding: 8px;
+}
+/*  End!! findPassword.jsp */
