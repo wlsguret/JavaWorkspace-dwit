@@ -11,23 +11,45 @@
 	5. 비밀번호 제약사항 걸기 영문 대소문, 숫자, 특수문자 포함(6~32자리)
 	6. 시간되면 나중에 메일 보내는 거 해서 문자확인까지
 */
- function signup(){
-	 if()
-	 document.getElementById('signupform').submit();
- }
+/* form Name을 통해서 태그 접근 */
+/* function signup() {
+	var Form = document.signupform;
+	Form.action = "/signupdo";
+	Form.submit();
+
+} */
+function check_pw(){
+	var pw = document.getElementById('pw').value;
+	var pw_c = document.getElementById('pw_c').value;
+	if (pw !=pw_c) { 
+	      document.getElementById('pw_msg').innerHTML = "비밀번호가 다릅니다. 다시 확인해 주세요."; 
+	    } 
+	    else { 
+	        document.getElementById('pw_msg').innerHTML = "비밀번호가 일치합니다."; 
+	    } 
+	    if (p_cf=="") { 
+	      document.getElementById('pw_msg').innerHTML = ""; 
+	    } 
+}
 
  function checkemail(){
 	 var email = document.getElementById('signup_email').value;
 	 location.href='/checkemail?email='+email;
  }
 </script>
+<style>
+#signupfrom input:invalid {
+	border-color: red;
+	background-color: aqua;
+}
+</style>
 <main>    
 	<h1 class="menutitle">REGISTER</h1>
 	<jsp:include page="/WEB-INF/Menu/Login/login_menu.jsp"/>
 	<section class = "signup_form">
 	    <h1>회원가입</h1>
 	    <p>WELCOME TO YELLOWLAB!</p>
-	    <form action="/signupdo" method="get" id="signupform" onsubmit="">
+	    <form  method="get" id="signupform" name="signupform" >
 	    <table class = "signup_table">
 	        <tr>
 	            <td>이메일주소</td>
@@ -52,7 +74,9 @@
 	        </tr>
 	        <tr>
 	            <td>비밀번호 확인</td>
-	            <td><input type="password" name="pw_c" id="pw_c" placeholder="비밀번호 재확인" required></td>
+	            <td><input type="password" name="pw_c" id="pw_c" placeholder="비밀번호 재확인" onkeyup="check_pw()" required>
+	            <small id="pw_msg"></small>
+	            </td>
 	        </tr>
 	        <tr>
 	            <td>이름</td>

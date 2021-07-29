@@ -28,17 +28,10 @@ public class MenuController {
 		return mv;
 	}
 	
-//	@RequestMapping("/notice")
-//	public ModelAndView notice() {
-//		ModelAndView mv = new ModelAndView("index");
-//		mv.addObject("main", "/Notice/notice.jsp");
-//		return mv;
-//	}
-	
-	@RequestMapping("/audition")
-	public ModelAndView audition() {
+	@RequestMapping("/video")
+	public ModelAndView video() {
 		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("main", "/Audition/audition.jsp");
+		mv.addObject("main", "/Video/video.jsp");
 		return mv;
 	}
 

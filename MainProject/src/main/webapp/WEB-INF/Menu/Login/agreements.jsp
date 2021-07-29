@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<textarea name="" id="" cols="80" rows="14" disabled>
+<textarea name="" id="" cols="80" rows="14" style="resize: none;" disabled>
 1. (수집하는 개인정보 항목)
 회사는 회원가입, 상담, 서비스 신청 등등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
 

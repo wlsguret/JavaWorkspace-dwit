@@ -386,3 +386,46 @@ position:relative;
     padding: 8px;
 }
 /*  End!! findPassword.jsp */
+/*  Start!! video.jsp */
+.mv{
+    padding-left: 17%;
+}
+
+.iu_celebrity{
+    justify-content: center;
+    width:80%;
+    height: 60vh;
+}
+
+.mv h3{
+    color:rgb(71, 71, 71);
+}
+.mv small{
+    color:rgb(78,78,78);
+}
+.mvlist{
+    font-size: small;
+    display: flex;
+    border-top: 2px solid lightgray;
+    padding-top: 25px;
+    margin-right: 311px;
+}
+
+.mvtable td img{
+    width:80%;
+    display: flex;
+    cursor: pointer;
+}
+.mvtable{
+    width:84.5%;
+}
+.mvtable tr{
+    height: 25vh;
+}
+.lilac{
+    
+}
+.bplove{
+    
+}
+/*  End!! video.jsp */

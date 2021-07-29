@@ -7,7 +7,7 @@
 			<li><a id="home" href="/index">HOME</a></li>
 			<li><a id="artist" href="/artist" data-transition="fade">ARTIST</a></li>
 			<li><a id="notice" href="/notice">NOTICE</a></li>
-			<li><a id="audition" href="/audition">AUDITION</a></li>
+			<li><a id="audition" href="/video">VIDEO</a></li>
 			<c:if test="${empty user}">
 				<li><a id="login" href="/login" data-transition='fade'>LOGIN</a></li>
 			</c:if>
