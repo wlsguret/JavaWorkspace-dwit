@@ -15,9 +15,9 @@
    				</td>
    			</tr>
    			<tr>
-   				<td id="but">
+   				<td class="but">
    					<input type="button" class="loginb" value="로그인하러 가기" onclick="location.href='/login'">
-   					<input type="button" class="nonfb" value="다시 찾기" onclick="">
+   					<input type="button" class="nonfb" value="다시 찾기" onclick="/find">
    				</td>
    			</tr>
    		</table>

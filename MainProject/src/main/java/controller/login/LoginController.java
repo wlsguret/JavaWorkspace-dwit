@@ -94,6 +94,7 @@ public class LoginController {
 	
 	@RequestMapping("/findEmail")
 	public ModelAndView findEmail(String fname , String fyear, String fmm, String fdd) {
+		ModelAndView mv = new ModelAndView("index");
 		// 이름 생년월일로 이메일 찾기
 		String birthday =fyear+fmm+fdd;
 		System.out.println(birthday);
@@ -119,29 +120,33 @@ public class LoginController {
 				System.out.println(masking);
 				user.setEmail(masking);
 			}
+			mv.addObject("main", "/Login/findEmail.jsp");
+			mv.addObject("userlist", list);
 		} else {
 			System.out.println("일치하는 이메일 없음");
+			mv.addObject("main", "/Login/findFail.jsp");
 		}
-		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("main", "/Login/findEmail.jsp");
-		mv.addObject("userlist", list);
 		return mv;
 	}
 	
 	@RequestMapping("/findPassword")
 	public ModelAndView findPassword(String femail , String fyear, String fmm, String fdd) {
+		ModelAndView mv = new ModelAndView("index");
 		String birthday =fyear+fmm+fdd;
 		UserVO user = userservice.findPassword(femail, birthday);
-		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("main", "/Login/findPassword.jsp");
-		mv.addObject("user", user);
+		if(user != null) {
+			mv.addObject("main", "/Login/findPassword.jsp");
+			mv.addObject("user", user);
+		} else {
+			mv.addObject("main", "/Login/findFail.jsp");
+		}
 		return mv;
 	}
 	
-	@RequestMapping("/pwdupdate")
-	public ModelAndView pwdupdate(String email, String password) {
-		// 파라미터 넘겨받을 때 현재 사용중인 비밀번호로 바꾸지 못하도록 조건문 주어야함 
-		int result = userservice.userPwdUpdate(email, password);
+	@RequestMapping("/pwUpdate")
+	public ModelAndView pwdupdate(String email, String newpw) {
+		// 파라미터 넘겨받을 때 현재 사용중인 비밀번호로 바꾸지 못하도록 조건문 주어야함
+		int result = userservice.userPwdUpdate(email, newpw);
 		if(result >0) {
 			System.out.println(email+" 회원비밀번호 수정");
 		} else {
@@ -149,7 +154,7 @@ public class LoginController {
 		}
 		
 		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("main", "/Login/find.jsp");
+		mv.addObject("main", "/Login/login.jsp");
 		return mv;
 	}
 	
