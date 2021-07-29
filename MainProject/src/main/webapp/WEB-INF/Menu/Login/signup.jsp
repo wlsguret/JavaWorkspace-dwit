@@ -21,15 +21,19 @@
 function check_pw(){
 	var pw = document.getElementById('pw').value;
 	var pw_c = document.getElementById('pw_c').value;
-	if (pw !=pw_c) { 
-	      document.getElementById('pw_msg').innerHTML = "비밀번호가 다릅니다. 다시 확인해 주세요."; 
-	    } 
-	    else { 
-	        document.getElementById('pw_msg').innerHTML = "비밀번호가 일치합니다."; 
-	    } 
-	    if (p_cf=="") { 
-	      document.getElementById('pw_msg').innerHTML = ""; 
-	    } 
+	var msg = document.getElementById('pw_msg');
+	if (pw_c!="") { 
+		msg.innerHTML = ""; 
+		if (pw !=pw_c) {
+			msg.style.color = "red";
+			msg.innerHTML = "다시 확인해 주세요."; 
+		} 
+		else { 
+			msg.style.color = "blue";	
+			msg.innerHTML = "비밀번호가 일치합니다."; 
+		} 
+	} 
+
 }
 
  function checkemail(){
@@ -37,12 +41,6 @@ function check_pw(){
 	 location.href='/checkemail?email='+email;
  }
 </script>
-<style>
-#signupfrom input:invalid {
-	border-color: red;
-	background-color: aqua;
-}
-</style>
 <main>    
 	<h1 class="menutitle">REGISTER</h1>
 	<jsp:include page="/WEB-INF/Menu/Login/login_menu.jsp"/>
@@ -67,7 +65,7 @@ function check_pw(){
 	        </tr>
 	        <tr>
 	            <td>비밀번호</td>
-	            <td><input type="password" name="password" id="pw" placeholder="비밀번호를 입력하세요."
+	            <td><input type="password" name="password" id="pw" placeholder="비밀번호를 입력하세요." onkeyup="check_pw()"
 	             pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{6,50}$" required>
 	            <br><small>영문 대소문, 숫자, 특수문자 포함(6~20자리)</small>
 	            </td>
