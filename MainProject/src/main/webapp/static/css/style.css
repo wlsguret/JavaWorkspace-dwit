@@ -274,6 +274,11 @@ position:relative;
     height: 30px;
     border:none;
 }
+.star::before {
+    content: ' *';
+    color: red;
+    font-size: 1.5em;
+}
 /*  End!! signup.jsp */
 /*  Start!! find.jsp */
 .forget_sec{
