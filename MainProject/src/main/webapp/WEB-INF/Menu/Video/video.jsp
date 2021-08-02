@@ -40,6 +40,7 @@ function func1(title,artist,date){
 					</c:forEach>
                 </tr>
             </table>
+            <button onclick="location.href='/videoAdd'">추가</button><button>수정</button><button>삭제</button>
     	</div>
     </section>
 </main>
