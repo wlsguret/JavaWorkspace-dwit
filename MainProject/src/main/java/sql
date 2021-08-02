@@ -1,7 +1,5 @@
 -- 웹사이트 유저 테이블
-
 drop table member;
-
 create table member (
 email varchar2(30)
 constraint member_email_pk primary key,
@@ -13,24 +11,17 @@ birthday date,
 gender varchar2(1)
 constraint member_gender_ck check(gender in('m','f'))
 );
+
 select * from member;
-select * from member where birthday ='19970217';
-
+select * from member where birthday ='19970117';
 select * from member where email='user@naver.com' and password='1234';
-
 desc member;
-
 insert into member values(
-'user5@naver.com','1234','박진혁','970217','m');
-insert into member values(
-'user7@naver.com','1234','박진혁','19970217','m');
-insert into member values(
-'user6@naver.com','1234','박진혁','970117','f');
-delete from member where email='wlsguret@naver.com';
+'testuser22!@naver.com','1234','유저','19970117','f');
 
 commit;
 
--- 웹사이트 board 테이블
+-- 웹사이트 notice 테이블
 drop table notice;
 create table notice (
 idx int constraint notice_idx_pk primary key,
@@ -55,5 +46,59 @@ create sequence notice_groupId_seq nocache;
 insert into notice values(notice_idx_seq.nextval,notice_groupId_seq.nextval,0,0,0,0,'제목 없음',null,'user@naver.com','유저',sysdate);
 
 select * from notice;
+
+commit;
+-- 웹사이트 게시판 Community 테이블
+
+create table Community (
+idx int constraint community_idx_pk primary key,
+groupId int constraint community_groupId_nn not null,
+depth number(3) default 0,
+reOrder number(3) default 0,
+isDel number(1) default 0,
+viewCount int default 0,
+title varchar2(30) default '제목 없음',
+content clob,
+writeId varchar2(30) constraint community_writeId_nn not null,
+writeName varchar2(30) constraint community_writeName_nn not null,
+writeDay date constraint community_writeDay_nn not null
+);
+
+drop sequence community_idx_seq;
+
+drop sequence community_groupId_seq;
+
+create sequence community_idx_seq nocache;
+
+create sequence community_groupId_seq nocache;?
+
+insert into community values(community_idx_seq.nextval,community_groupId_seq.nextval,0,0,0,0,'제목 없음','커뮤니티','user@naver.com','유저',sysdate);
+
+select * from community;
+select c.* from (select rownum rnum, b.* from (select * from community a order by a.groupid desc, a.depth asc, a.idx asc) b where rownum <= 10) c where rnum >= 1 ;
+select c.* from (select rownum rnum, b.* from (select * from community a order by a.groupid desc, a.depth asc, a.idx asc) b) c ;
+
+commit;
+-- 웹사이트 비디오 mvlist 테이블
+create sequence mvlist_seq;
+create table mvlist(
+id number(4) primary key,
+url varchar2(100),
+imgfile varchar2(40),
+artist varchar2(40),
+title varchar2(100),
+releaseDate date
+);
+-- 날짜 포맷 바꾸기 https://coding-factory.tistory.com/439
+insert into mvlist values(
+mvlist_seq.nextval, 'https://www.youtube.com/embed/0-q1KafFCLU','iu celebrity.png','IU','CELEBRITY', to_date('2021-01-27','yyyy-mm-dd'));
+insert into mvlist values(
+mvlist_seq.nextval, 'https://www.youtube.com/embed/v7bnOxV4jAc','iu lilac.png','IU','LILAC(라일락)', to_date('2021-03-25','yyyy-mm-dd'));
+insert into mvlist values(
+mvlist_seq.nextval, 'https://www.youtube.com/embed/dyRsYk0LyA8','blackpink lovesick girls.png','BLACKPINK','Lovesick Girls', to_date('2020-10-02','yyyy-mm-dd'));
+
+
+select * from mvlist;
+select id,url,imgFile,artist,title,TO_CHAR(releaseDate,'YYYY-MM-DD') from mvlist;
 
 commit;

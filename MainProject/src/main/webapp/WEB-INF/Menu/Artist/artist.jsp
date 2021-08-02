@@ -6,7 +6,7 @@
 
 	<div class="artistList">
 		<div class="artistImg"
-			style="background: url(img/IU.jpg) no-repeat;">
+			style="background: url(/img/ArtistImg/IU.jpg) no-repeat;">
 			<div class="text">
 				<p>IU</p>
 			</div>
@@ -14,20 +14,20 @@
 		</div>
 
 		<div class="artistImg"
-			style="background: url(img/sohee.png) no-repeat;">
+			style="background: url(/img/ArtistImg/sohee.png) no-repeat;">
 			<div class="text">
 				<p>SOHEE HAN</p>
 			</div>
 		</div>
 
 		<div class="artistImg"
-			style="background: url(img/junghan.jpg) no-repeat;">
+			style="background: url(/img/ArtistImg/junghan.jpg) no-repeat;">
 			<div class="text">
 				<p>JUNGHAN</p>
 			</div>
 		</div>
 		<div class="artistImg"
-			style="background: url(img/blackpink.jpg) no-repeat;">
+			style="background: url(/img/ArtistImg/blackpink.jpg) no-repeat;">
 			<div class="text">
 				<p>BLACKPINK</p>
 			</div>
@@ -35,14 +35,14 @@
 		</div>
 
 		<div class="artistImg"
-			style="background: url(img/blackpink.jpg) no-repeat;">
+			style="background: url(/img/ArtistImg/blackpink.jpg) no-repeat;">
 			<div class="text">
 				<p>BLACKPINK</p>
 			</div>
 		</div>
 
 		<div class="artistImg"
-			style="background: url(img/vernon.png) no-repeat;">
+			style="background: url(/img/ArtistImg/vernon.png) no-repeat;">
 			<div class="text">
 				<p>BLACKPINK</p>
 			</div>

@@ -13,20 +13,19 @@ import java.util.*;
 // ver 4.0
 @ServerEndpoint(value = "/wsocket")
 public class MyWebSocket {
-	@SuppressWarnings("unused")
 	private static final Set<Session> sessions = Collections.synchronizedSet(new HashSet<Session>());
 
 	private static int i = 0;
 
 	@OnOpen
 	public void handleOpen(Session session) {
-		System.out.println("Å¬¶óÀÌ¾ðÆ®°¡ Á¢¼ÓµÇ¾ú½À´Ï´Ù.");
-		System.out.println("Á¢¼ÓÀÚ¼ö:" + (++i));
-		sessions.add(session); // Á¢¼ÓµÈ ¼¼¼ÇÀ» ÀúÀå¼Ò¿¡ º¸°ü
+		System.out.println("Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ÓµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½:" + (++i));
+		sessions.add(session); // ï¿½ï¿½ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 		try {
 			for (Session s : sessions) {
 				System.out.println(s.getRequestURI());
-				session.getBasicRemote().sendText("´©±º°¡ µé¾î¿Ô³×!!" + i);
+				session.getBasicRemote().sendText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô³ï¿½!!" + i);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -35,7 +34,7 @@ public class MyWebSocket {
 
 	@OnClose
 	public void handleClose() {
-		System.out.println("Å¬¶óÀÌ¾ðÆ®°¡ Á¢¼ÓÀÌ ÇØÁ¦µÇ¾ú½À´Ï´Ù.");
+		System.out.println("Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		i--;
 	}
 
@@ -46,7 +45,7 @@ public class MyWebSocket {
 
 	@OnMessage
 	public void handleMesagge(String message) {
-		System.out.println("¼ö½ÅµÈ ¸Þ½ÃÁö:" + message);
+		System.out.println("ï¿½ï¿½ï¿½Åµï¿½ ï¿½Þ½ï¿½ï¿½ï¿½:" + message);
 		try {
 			for (Session s : sessions) {
 				s.getBasicRemote().sendText(message);
@@ -54,7 +53,7 @@ public class MyWebSocket {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		//return "¼ö½Å¿Ï·á";
+		//return "ï¿½ï¿½ï¿½Å¿Ï·ï¿½";
 	}
 }
 
