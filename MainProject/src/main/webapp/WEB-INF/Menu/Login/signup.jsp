@@ -2,6 +2,23 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="/js/signup.js"></script>
+<script type="text/javascript">
+/* $.ajax({url: "/checkemail?email="+email, success: function(result){
+	 console.log(result);
+	 if(result == "fail"){
+		 alert('이미 사용중인 이메일입니다.');
+		 checkEmail = false;
+	 } else {
+		 alert('가입 가능한 이메일입니다.')
+		 checkEmail = true;
+	 }
+}}) */
+function sendmail() {
+	var email = $("#hemail").val($('#signup_email').val()+"@"+$('#domain').val());
+	$.ajax({url: "/mailtest?email="+email.val(), success: function(result){
+	}})
+}
+</script>
 <main>    
 <!-- 클래스 만들어서 클래스before 해서 빨간별 추가 해서 필수사항 뒤에 태그추가 -->
 	<h1 class="menutitle">REGISTER</h1>
@@ -22,6 +39,8 @@
 	            	<option value='kakao.com'>kakao.com</option>
 	            </select>
 	            <input type="button" id="checkEmail" value="중복확인" onclick="check_email()"><br>
+	            <input type="email" name="hemail" id="hemail">
+	            <input type="button" id="test" value="이메일 본인인증" onclick="sendmail()"><br>
 	            <small>이메일은 아이디로 사용되며, 확인 이메일이 발송됩니다.</small><br>
 	            <small>이미 등록된 이메일이라면 </small><input type="button" value="확인하기" onclick="location.href='/find'">
 	            </td>

@@ -1,4 +1,4 @@
-package controller.notice;
+package controller;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;

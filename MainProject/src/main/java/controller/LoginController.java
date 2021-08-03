@@ -1,15 +1,21 @@
-package controller.login;
+package controller;
 
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import email.service.EmailService;
 import user.model.UserVO;
 import user.service.UserService;
 
@@ -18,6 +24,8 @@ public class LoginController {
 	
 	@Resource(name = "userservice")
 	UserService userservice;
+	@Resource(name = "emailservice")
+	EmailService emailservice;
 
 	@RequestMapping("/login")
 	public ModelAndView login() {
@@ -83,6 +91,11 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("main", "/Login/signup.jsp");
 		return mv;
+	}
+	
+	@RequestMapping("/mailtest")
+	public void mailtest(String email) {
+		emailservice.sendEmail(email);
 	}
 	
 	@RequestMapping("/find")
