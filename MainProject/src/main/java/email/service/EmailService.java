@@ -2,5 +2,5 @@ package email.service;
 
 public interface EmailService {
 	
-	public void sendEmail(String email);
+	public String sendEmail(String email);
 }

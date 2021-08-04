@@ -20,7 +20,7 @@
 <script src="js/jquery.fullPage.js"></script>
 <script src="js/main.js"></script>
 </head>
-<body>
+<body id="indexbody">
 	<jsp:include page="/WEB-INF/Menu${main }"/>
 	<jsp:include page="/WEB-INF/Menu/Home/aside.jsp"/>
 	<jsp:include page="/WEB-INF/Menu/Home/footer.jsp"/>

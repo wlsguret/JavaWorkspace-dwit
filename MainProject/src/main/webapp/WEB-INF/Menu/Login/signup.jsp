@@ -13,14 +13,16 @@
 		 checkEmail = true;
 	 }
 }}) */
+var Scode;
 function sendmail() {
-	var email = $("#hemail").val($('#signup_email').val()+"@"+$('#domain').val());
-	$.ajax({url: "/mailtest?email="+email.val(), success: function(result){
+	/* var email = $("#hemail").val($('#signup_email').val()+"@"+$('#domain').val()); */
+	var email = $('#signup_email').val()+"@"+$('#domain').val();
+	$.ajax({url: "/mailtest?email="+email, success: function(result){
+		Scode = result;
 	}})
 }
 </script>
 <main>    
-<!-- 클래스 만들어서 클래스before 해서 빨간별 추가 해서 필수사항 뒤에 태그추가 -->
 	<h1 class="menutitle">REGISTER</h1>
 	<jsp:include page="/WEB-INF/Menu/Login/login_menu.jsp"/>
 	<section class = "signup_form">
@@ -29,7 +31,7 @@ function sendmail() {
 	    <form action="/signupdo" method="get" id="signupform" name="signupform" >
 	    <table class = "signup_table">
 	        <tr>
-	            <td>이메일주소<span class="star"/></td>
+	            <td>이메일(ID)<span class="star"/></td>
 	            <td><input type="text" name="email" id="signup_email" placeholder="이메일을 입력해주세요." onkeypress="check_eamil_reset()">@
 	            <select name="domain" id="domain">
 	            	<option value='unchecked'>도메인선택</option>
@@ -38,10 +40,9 @@ function sendmail() {
 	            	<option value='google.com'>google.com</option>
 	            	<option value='kakao.com'>kakao.com</option>
 	            </select>
-	            <input type="button" id="checkEmail" value="중복확인" onclick="check_email()"><br>
-	            <input type="email" name="hemail" id="hemail">
-	            <input type="button" id="test" value="이메일 본인인증" onclick="sendmail()"><br>
-	            <small>이메일은 아이디로 사용되며, 확인 이메일이 발송됩니다.</small><br>
+	            <input type="button" id="checkEmail" value="중복확인" onclick="check_email()"><br>  
+	            <small>이메일은 아이디로 사용되며, 확인 이메일이 발송됩니다.</small><input type="button" id="test" value="이메일 인증" onclick="sendmail()"><br>
+	            <input type="text" size="4"><input type="button" value="확인">
 	            <small>이미 등록된 이메일이라면 </small><input type="button" value="확인하기" onclick="location.href='/find'">
 	            </td>
 	        </tr>

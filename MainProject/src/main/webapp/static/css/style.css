@@ -1,5 +1,8 @@
 body{
-	overflow-x:hidden;
+	-ms-overflow-style: none;
+}
+::-webkit-scrollbar{
+	display:none;
 }
 
 a{ text-decoration: none;}

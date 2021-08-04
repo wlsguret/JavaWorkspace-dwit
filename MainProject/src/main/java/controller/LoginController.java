@@ -13,6 +13,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import email.service.EmailService;
@@ -66,6 +67,13 @@ public class LoginController {
 		return mv;
 	}
 	
+	@RequestMapping("/signupTest")
+	public ModelAndView signuptest() {
+		ModelAndView mv = new ModelAndView("index");
+		mv.addObject("main", "/Login/signup_ModalTest.jsp");
+		return mv;
+	}
+	
 	@SuppressWarnings("deprecation")
 	@RequestMapping("/signupdo")
 	public ModelAndView signupdo(String email, String password, String name,
@@ -94,8 +102,9 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/mailtest")
-	public void mailtest(String email) {
-		emailservice.sendEmail(email);
+	@ResponseBody
+	public String mailtest(String email) {
+		return emailservice.sendEmail(email);
 	}
 	
 	@RequestMapping("/find")
