@@ -89,16 +89,26 @@ public class LoginController {
 		return mv;
 	}
 
+//	@RequestMapping("/checkemail")
+//	public ModelAndView checkemail(String email) {
+//		UserVO user = userservice.checkEmail(email);
+//		System.out.println(user);
+//		if(user != null) {
+//			
+//		}
+//		ModelAndView mv = new ModelAndView("index");
+//		mv.addObject("main", "/Login/signup.jsp");
+//		return mv;
+//	}
+	
 	@RequestMapping("/checkemail")
-	public ModelAndView checkemail(String email) {
-		UserVO user = userservice.checkEmail(email);
-		System.out.println(user);
-		if(user != null) {
-			
+	@ResponseBody
+	public String checkemail(String email) {
+		if(userservice.checkEmail(email) != null) {
+			return "false"; 
+		} else {
+			return "true";
 		}
-		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("main", "/Login/signup.jsp");
-		return mv;
 	}
 	
 	@RequestMapping("/mailtest")

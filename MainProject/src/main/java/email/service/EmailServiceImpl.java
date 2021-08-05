@@ -18,14 +18,17 @@ public class EmailServiceImpl implements EmailService {
 
 	@Override
 	public String sendEmail(String email) {
-		int code = new Random().nextInt(1000000); // 0~999999 범위의 랜덤한 수를 얻음
+		String code ="";
+		for(int i =0; i<6; i++)
+			code +=  new Random().nextInt(10); // 0~9까지의 랜덤한 수 
+		final String codes = code;
 		MimeMessagePreparator mailInfo = new MimeMessagePreparator() {
 			@Override
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 				MimeMessageHelper message = new MimeMessageHelper(mimeMessage, "UTF-8");
 				message.setTo(email);
 				message.setSubject("이메일 본인인증");
-				message.setText("보안코드:"+code);
+				message.setText("보안코드:"+codes);
 				message.setFrom("admin@google.com");
 			}
 		};
