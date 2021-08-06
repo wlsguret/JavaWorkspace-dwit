@@ -4,13 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -88,18 +83,6 @@ public class LoginController {
 		mv.addObject("main", "/Home/home.jsp");
 		return mv;
 	}
-
-//	@RequestMapping("/checkemail")
-//	public ModelAndView checkemail(String email) {
-//		UserVO user = userservice.checkEmail(email);
-//		System.out.println(user);
-//		if(user != null) {
-//			
-//		}
-//		ModelAndView mv = new ModelAndView("index");
-//		mv.addObject("main", "/Login/signup.jsp");
-//		return mv;
-//	}
 	
 	@RequestMapping("/checkemail")
 	@ResponseBody

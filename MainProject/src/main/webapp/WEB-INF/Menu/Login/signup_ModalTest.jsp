@@ -87,7 +87,7 @@
 	    <table class = "signup_table">
 	        <tr>
 	            <td>이메일(ID)<span class="star"/></td>
-	            <td><input type="text" name="email" id="signup_email" placeholder="이메일을 입력해주세요." onkeypress="check_eamil_reset()">@
+	            <td><input type="text" name="email" id="signup_email" placeholder="이메일을 입력해주세요." onkeypress="check_eamil_reset()" onkeyup="reset_email()">@
 	            <select name="domain" id="domain">
 	            	<option value='unchecked'>도메인선택</option>
 	            	<option value='naver.com'>naver.com</option>
@@ -95,10 +95,14 @@
 	            	<option value='google.com'>google.com</option>
 	            	<option value='kakao.com'>kakao.com</option>
 	            </select>
-	            <input type="button" id="checkEmail" value="중복확인" >  
-	            <input type="button" id="btn-modal" value="이메일 인증" onclick="check_email()"><br>
-	            <small>이메일은 아이디로 사용되며, 확인 이메일이 발송됩니다.</small>
-	            <small>이미 등록된 이메일이라면 </small><input type="button" value="확인하기" onclick="location.href='/find'">
+	            <input type="button" id="btn-modal" value="중복확인" onclick="check_email()"><br>  
+	            <!-- <input type="button" id="btn-modal" value="이메일 인증"><br> -->
+	            <small>이메일은 아이디로 사용되며, 확인 이메일이 발송됩니다.</small><br>
+	            <input type="text" id="modalemail">
+               	<input type="button" value="인증 메일 전송" id="modaltimer" onclick="sendmail()"><br>
+               	<input type="text" class="code_chk" size="6" maxlength="6">
+               	<span class="time"></span>
+               	<input type="button" value="확인" class="btn_chk" onclick="Scode_chk()">
 	            </td>
 	        </tr>
 	        <tr>
@@ -208,11 +212,15 @@
 <!-- 메일전송 스크립트 -->
 var Scode;
 function sendmail() {
-	var email = $('#signup_email').val()+"@"+$('#domain').val();
-	$.ajax({url: "/mailtest?email="+email, success: function(result){
-		Scode = result;
-		console.log("전송된 코드:"+Scode);
-	}})
+	if(checkEmail){
+		var email = $('#signup_email').val()+"@"+$('#domain').val();
+		$.ajax({url: "/mailtest?email="+email, success: function(result){
+			Scode = result;
+			console.log("전송된 코드:"+Scode);
+		}})		
+	} else {
+		alert("중복확인이 필요합니다.");
+	}
 }
 
 function Scode_chk(){
@@ -253,9 +261,10 @@ function getEmail(){
 const btnModal = document.getElementById("btn-modal");
 btnModal.addEventListener("click", e => {
 	if(checkEmail){
-	    modalOn()	
+	    modalOn();	
 	} else {
-/* 		alert("중복확인이 필요합니다."); */
+		check_email();
+		modalOn();
 	}
 })
 btnModal.addEventListener("click", e => {
@@ -386,6 +395,10 @@ function check_email(){
 /* 이메일 중복확인 후 이메일 수정시 리셋 */
 function check_eamil_reset(){
 	checkEmail = false;
+}
+
+function reset_email(){
+	$('#modalemail').val("")
 }
 
 /* 비밀번호 정규식 */
