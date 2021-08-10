@@ -39,7 +39,9 @@ public class VideoController {
 	
 	@RequestMapping("/videoInsert")
 	public String videoInsert(MultipartHttpServletRequest request) {
-        String rootUploadDir = "C:"+File.separator+"Upload"; // C:/Upload
+		String realPath = request.getSession().getServletContext().getRealPath("/static/img/mvtitleImg/");
+
+		String rootUploadDir = "C:"+File.separator+"Upload"; // C:/Upload
         
         File dir = new File(rootUploadDir + File.separator + "testfile"); 
         
@@ -75,7 +77,7 @@ public class VideoController {
                 
                 try {
                     System.out.println("try 진입");
-                    mFile.transferTo(new File(dir + File.separator + sysFileName)); // C:/Upload/testfile/sysFileName
+                    mFile.transferTo(new File(realPath+ sysFileName)); // C:/Upload/testfile/sysFileName
                     list.add("원본파일명: " + orgFileName + ", 시스템파일명: " + sysFileName);
                     
                 }catch(Exception e){

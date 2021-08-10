@@ -1,33 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="/js/signup.js"></script>
-<main>
+<script type="text/javascript">
+/* $.ajax({url: "/checkemail?email="+email, success: function(result){
+	 console.log(result);
+	 if(result == "fail"){
+		 alert('이미 사용중인 이메일입니다.');
+		 checkEmail = false;
+	 } else {
+		 alert('가입 가능한 이메일입니다.')
+		 checkEmail = true;
+	 }
+}}) */
+var Scode;
+function sendmail() {
+	/* var email = $("#hemail").val($('#signup_email').val()+"@"+$('#domain').val()); */
+	var email = $('#signup_email').val()+"@"+$('#domain').val();
+	$.ajax({url: "/mailtest?email="+email, success: function(result){
+		Scode = result;
+	}})
+}
+</script>
+<main>    
 	<h1 class="menutitle">REGISTER</h1>
 	<jsp:include page="/WEB-INF/Menu/Login/login_menu.jsp"/>
-    
-    <section class = "signup_form">
+	<section class = "signup_form">
 	    <h1>회원가입</h1>
 	    <p>WELCOME TO YELLOWLAB!</p>
 	    <form action="/signupdo" method="get" id="signupform" name="signupform" >
 	    <table class = "signup_table">
 	        <tr>
 	            <td>이메일(ID)<span class="star"/></td>
-	            <td><input type="text" id="signup_email" placeholder="이메일을 입력해주세요." onkeypress="checkEmail_reset()">@
-	            <select id="domain">
+	            <td><input type="text" name="email" id="signup_email" placeholder="이메일을 입력해주세요." onkeypress="check_eamil_reset()">@
+	            <select name="domain" id="domain">
 	            	<option value='unchecked'>도메인선택</option>
 	            	<option value='naver.com'>naver.com</option>
 	                <option value='daum.net'>daum.net</option>
 	            	<option value='google.com'>google.com</option>
 	            	<option value='kakao.com'>kakao.com</option>
 	            </select>
-	            <input type="hidden" name="email" id="checked_email">
-	            <input type="button" value="중복확인" onclick="check_email()"><br>  
-	            <small>이메일은 아이디로 사용되며, 확인 이메일이 발송됩니다.</small><br>
-               	<input type="button" value="메일인증" id="sendmail"><br>
-               	보안코드: <input type="text" class="code_chk" size="6" maxlength="6">
-               	<span class="time"></span>
-               	<input type="button" value="확인" id="code_chk_btn">
+	            <input type="button" id="checkEmail" value="중복확인" onclick="check_email()"><br>  
+	            <small>이메일은 아이디로 사용되며, 확인 이메일이 발송됩니다.</small><input type="button" id="test" value="이메일 인증" onclick="sendmail()"><br>
+	            <input type="text" size="4"><input type="button" value="확인">
+	            <small>이미 등록된 이메일이라면 </small><input type="button" value="확인하기" onclick="location.href='/find'">
 	            </td>
 	        </tr>
 	        <tr>
@@ -39,7 +55,7 @@
 	        </tr>
 	        <tr>
 	            <td>비밀번호 확인<span class="star"/></td>
-	            <td><input type="password" id="pw_c" placeholder="비밀번호 재확인" onkeyup="check_pw_same()" 
+	            <td><input type="password" name="pw_c" id="pw_c" placeholder="비밀번호 재확인" onkeyup="check_pw_same()" 
 	             maxlength="20">
 	            <small id="pw_c_msg"></small>
 	            </td>
@@ -52,10 +68,9 @@
 	        </tr>
 	        <tr>
 	            <td>생년월일<span class="star"/></td>
-	            <td><input type="hidden" name="birthday" id="birthday">
-	            	<input type="text" id="year" placeholder="년도" style="width:50px;" maxlength="4" max="2050">
+	            <td><input type="text" name="year" id="year" placeholder="년도" style="width:50px;" maxlength="4" max="2050">
 	                <span class="box">
-	                    <select id="mm">
+	                    <select name="mm" id="mm">
 	                        <optgroup label="월"></optgroup>
 	                        <c:forEach var="i" begin="1" end="12">
 	                        	<option value="${i }">${i }</option>
@@ -63,10 +78,10 @@
 	                    </select>
 	                </span>
 	
-	                <span>
-	                    <select id="dd" >
+	                <span id = "dd">
+	                    <select name="dd" id="dd" >
 	                    	<optgroup label="일"></optgroup>
-	                        <c:forEach var="i" begin="1" end="31">
+	                    	<c:forEach var="i" begin="1" end="31">
 	                        	<option value="${i }">${i }</option>
 	                        </c:forEach>
 	                    </select>

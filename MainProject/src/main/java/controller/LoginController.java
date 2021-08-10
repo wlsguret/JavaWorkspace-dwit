@@ -1,6 +1,5 @@
 package controller;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -69,14 +68,8 @@ public class LoginController {
 		return mv;
 	}
 	
-	@SuppressWarnings("deprecation")
 	@RequestMapping("/signupdo")
-	public ModelAndView signupdo(String email, String password, String name,
-			int year, int mm, int dd, String gender, String ok, String agreement) {
-		Date birthday = null;
-		birthday= new Date(year, mm, dd);
-		UserVO user = new UserVO(email, password, name, birthday, gender);
-		System.out.println(user);
+	public ModelAndView signupdo(UserVO user) {
 		userservice.userInsert(user);
 		ModelAndView mv = new ModelAndView("index");
 		System.out.println("가입성공");
@@ -87,10 +80,10 @@ public class LoginController {
 	@RequestMapping("/checkemail")
 	@ResponseBody
 	public String checkemail(String email) {
-		if(userservice.checkEmail(email) != null) {
-			return "false"; 
+		if(userservice.checkEmail(email) == null) {
+			return "true"; 
 		} else {
-			return "true";
+			return "false";
 		}
 	}
 	
