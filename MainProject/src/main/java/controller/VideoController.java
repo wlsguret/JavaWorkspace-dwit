@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import video.model.VideoVO;
 import video.service.VideoService;
 
 @Controller
@@ -38,12 +39,14 @@ public class VideoController {
 	}
 	
 	@RequestMapping("/videoInsert")
-	public String videoInsert(MultipartHttpServletRequest request) {
+	public String videoInsert(VideoVO video, MultipartHttpServletRequest request) {
+		System.out.println(video);
 		String realPath = request.getSession().getServletContext().getRealPath("/static/img/mvtitleImg/");
+		
 
-		String rootUploadDir = "C:"+File.separator+"Upload"; // C:/Upload
+		String rootUploadDir = "C:\\Users\\admin\\git\\JavaWorkspace-dwit\\MainProject\\src\\main\\webapp\\static\\img";
         
-        File dir = new File(rootUploadDir + File.separator + "testfile"); 
+        File dir = new File(rootUploadDir + "\\mvtitleImg"); 
         
         if(!dir.exists()) { //업로드 디렉토리가 존재하지 않으면 생성
             dir.mkdirs();
@@ -70,15 +73,20 @@ public class VideoController {
             
             if(orgFileName != null && orgFileName.length() != 0) { //sysFileName 생성
                 System.out.println("if문 진입");
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMDDHHmmss-" + fileLoop);
-                Calendar calendar = Calendar.getInstance();
-                sysFileName = simpleDateFormat.format(calendar.getTime()); //sysFileName: 날짜-fileLoop번호
+                //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMDDHHmmss-" + fileLoop);
+                //Calendar calendar = Calendar.getInstance();
+                //sysFileName = simpleDateFormat.format(calendar.getTime()); //sysFileName: 날짜-fileLoop번호
+                sysFileName = video.getImgFile();
                 
                 
                 try {
                     System.out.println("try 진입");
-                    mFile.transferTo(new File(realPath+ sysFileName)); // C:/Upload/testfile/sysFileName
+                    System.out.println(realPath+sysFileName);
+                    System.out.println(dir+File.separator+sysFileName);
+                    //mFile.transferTo(new File(realPath+ sysFileName)); // C:/Upload/testfile/sysFileName
+                    mFile.transferTo(new File(dir+File.separator+ sysFileName)); // C:/Upload/testfile/sysFileName
                     list.add("원본파일명: " + orgFileName + ", 시스템파일명: " + sysFileName);
+                    System.out.println("원본파일명: " + orgFileName + ", 시스템파일명: " + sysFileName);
                     
                 }catch(Exception e){
                     list.add("파일 업로드 중 에러발생!!!");

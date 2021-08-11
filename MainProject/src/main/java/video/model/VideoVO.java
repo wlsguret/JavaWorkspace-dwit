@@ -25,9 +25,8 @@ public class VideoVO {
 	
 	public VideoVO() {}
 
-
-	public VideoVO(int id, String url, String imgFile, String artist, String title, Date releaseDate) {
-		this.id = id;
+	
+	public VideoVO(String url, String imgFile, String artist, String title, Date releaseDate) {
 		this.url = url;
 		this.imgFile = imgFile;
 		this.artist = artist;
@@ -81,7 +80,7 @@ public class VideoVO {
 
 	public void setReleaseDate(Date releaseDate) {
 		this.releaseDate = releaseDate;
-		this.fDate = format.format(releaseDate);
+		//this.fDate = format.format(releaseDate);
 	}
 
 	public String getfDate() {
