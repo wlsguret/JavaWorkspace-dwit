@@ -9,6 +9,6 @@
 	<small> 
 		<a href="">INFO</a> | <a href="">SUPPORT</a> | <a href="">MARKETING</a>
 	</small><br> 
-	<small class="footlink"> Copyrightⓒ2013 YELLOLAB Co., Ltd. All rights reserved. </small>
+	<small class="footlink"> Copyrightⓒ2013 YELLOWLAB Co., Ltd. All rights reserved. </small>
 
 </footer>
