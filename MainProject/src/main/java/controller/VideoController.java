@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.Iterator;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,7 +43,6 @@ public class VideoController {
 	public String videoInsert(VideoVO video, MultipartHttpServletRequest request) {
 		System.out.println(video);
 		String realPath = request.getSession().getServletContext().getRealPath("/static/img/mvtitleImg/");
-		
 
 		String rootUploadDir = "C:\\Users\\admin\\git\\JavaWorkspace-dwit\\MainProject\\src\\main\\webapp\\static\\img";
         
@@ -72,30 +72,20 @@ public class VideoController {
             System.out.println(orgFileName);
             
             if(orgFileName != null && orgFileName.length() != 0) { //sysFileName 생성
-                System.out.println("if문 진입");
                 //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMDDHHmmss-" + fileLoop);
                 //Calendar calendar = Calendar.getInstance();
                 //sysFileName = simpleDateFormat.format(calendar.getTime()); //sysFileName: 날짜-fileLoop번호
                 sysFileName = video.getImgFile();
-                
-                
                 try {
-                    System.out.println("try 진입");
-                    System.out.println(realPath+sysFileName);
-                    System.out.println(dir+File.separator+sysFileName);
-                    //mFile.transferTo(new File(realPath+ sysFileName)); // C:/Upload/testfile/sysFileName
                     mFile.transferTo(new File(dir+File.separator+ sysFileName)); // C:/Upload/testfile/sysFileName
-                    list.add("원본파일명: " + orgFileName + ", 시스템파일명: " + sysFileName);
+                    //list.add("원본파일명: " + orgFileName + ", 시스템파일명: " + sysFileName);
                     System.out.println("원본파일명: " + orgFileName + ", 시스템파일명: " + sysFileName);
-                    
                 }catch(Exception e){
-                    list.add("파일 업로드 중 에러발생!!!");
+                	e.printStackTrace();
                 }
-            }//if
-        }//while
-        
-//        mv.addObject("list", list);
-        
+            }
+        }
+
         return "forward:/video";
     }
 }

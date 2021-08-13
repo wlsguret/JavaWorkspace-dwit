@@ -33,9 +33,9 @@ function func1(title,artist,date){
 		            <c:forEach var="video" items="${mvlist }">
 					<td>
 						<img alt="${video.title }" src="/img/mvtitleImg/${video.imgFile }"
-						onclick="movie('${video.url}'); func1('${video.title}','${video.artist}','${video.fDate}');">
+						onclick="movie('${video.url}'); func1('${video.title}','${video.artist}','${video.formatDate}');">
 						<b><small>${video.title }</small></b><br>
-                         <small>${video.artist } | ${video.fDate }</small>
+                         <small>${video.artist } | ${video.formatDate }</small>
 					</td>
 					</c:forEach>
                 </tr>

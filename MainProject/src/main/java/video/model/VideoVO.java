@@ -5,14 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class VideoVO {
-	
+
 	int id;
 	String url;
 	String imgFile;
 	String artist;
 	String title;
 	Date releaseDate;
-	String fDate;
+	String formatDate;
 	public static DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 //	// 날짜 형식을 String으로 혹은 String을 날짜 형식으로 변환하기 위한 포맷형식이다.
 //	DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
@@ -22,10 +22,10 @@ public class VideoVO {
 //	datestr = format.format(new Date());
 //	// String 형식을 Date형식으로 변환한다.
 //	Date date = format.parse("2019/06/29");
-	
-	public VideoVO() {}
 
-	
+	public VideoVO() {
+	}
+
 	public VideoVO(String url, String imgFile, String artist, String title, Date releaseDate) {
 		this.url = url;
 		this.imgFile = imgFile;
@@ -80,22 +80,21 @@ public class VideoVO {
 
 	public void setReleaseDate(Date releaseDate) {
 		this.releaseDate = releaseDate;
-		//this.fDate = format.format(releaseDate);
+		this.formatDate = format.format(releaseDate);
 	}
 
-	public String getfDate() {
-		return fDate;
+	public String getformatDate() {
+		return formatDate;
 	}
 
-
-	public void setfDate(String fDate) {
-		this.fDate = fDate;
+	public void setformatDate(String formatDate) {
+		this.formatDate = formatDate;
 	}
 
 	@Override
 	public String toString() {
 		return "VideoVO [id=" + id + ", url=" + url + ", imgFile=" + imgFile + ", artist=" + artist + ", title=" + title
-				+ ", releaseDate=" + releaseDate + ", fDate=" + fDate + "]";
+				+ ", releaseDate=" + releaseDate + ", formatDate=" + formatDate + "]";
 	}
-	
+
 }
