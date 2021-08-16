@@ -398,38 +398,52 @@ position:relative;
 /*  End!! findPassword.jsp */
 /*  Start!! video.jsp */
 .mv{
-    padding-left: 17%;
+    padding: 0 15%;
 }
 
-.iu_celebrity{
+#mainMV{
     justify-content: center;
-    width:80%;
+    width:100%;
     height: 60vh;
 }
 
-.mv h3{
+#mv_tit{
     color:rgb(71, 71, 71);
 }
-.mv small{
+#mv_cont{
     color:rgb(78,78,78);
 }
 .mvlist{
     font-size: small;
-    display: flex;
     border-top: 2px solid lightgray;
     padding-top: 25px;
-    margin-right: 311px;
 }
 
-.mvtable td img{
-    width:80%;
-    display: flex;
-    cursor: pointer;
+.container{
+	display:flex;/*가진 display타입이 뭐든 줄을 안바꾸겠다*/
+	flex-flow:row wrap;/*가로가 다 차면 그래도 줄 바꿔라*/
 }
-.mvtable{
-    width:84.5%;
+.container .mvImg{/*container의 자손들 일괄 세팅*/
+	min-width:140px;
+	min-height:150px;
+	padding: 10px;
+	box-sizing: border-box;
 }
-.mvtable tr{
-    height: 25vh;
+.mvImg img {
+	width: 100%;
+	cursor: pointer;
 }
+@media(max-width:480px){
+	.mvImg{width:100%}/*좁을 때는 너네가 100%.. 이 안에는 px 단위로 잡지 않는다.*/
+}
+@media(min-width:900px){
+	.mvImg{width:50%}
+}
+@media(min-width:1200px){
+	.mvImg{width:33.3%}
+}
+@media(min-width:1500px){
+	.mvImg{width:25%}
+}
+
 /*  End!! video.jsp */
