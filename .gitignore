@@ -94,6 +94,7 @@ hs_err_pid*
 
 # Costom
 pom.properties
+MANIFEST.MF
 
 ### Windows ###
 # Windows thumbnail cache files
