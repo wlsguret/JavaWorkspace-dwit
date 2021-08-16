@@ -6,5 +6,6 @@ import video.model.VideoVO;
 
 public interface VideoMapper {
 
-	public List<VideoVO> videoList();
+	List<VideoVO> videoList();
+	int videoInsert(VideoVO video); 
 }

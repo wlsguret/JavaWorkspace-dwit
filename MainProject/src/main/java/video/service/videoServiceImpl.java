@@ -18,4 +18,9 @@ public class videoServiceImpl implements VideoService {
 		return mapper.videoList();
 	}
 
+	@Override
+	public int videoInsert(VideoVO video) {
+		return mapper.videoInsert(video);
+	}
+
 }

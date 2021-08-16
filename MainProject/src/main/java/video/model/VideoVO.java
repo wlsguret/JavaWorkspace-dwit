@@ -13,7 +13,7 @@ public class VideoVO {
 	String title;
 	Date releaseDate;
 	String formatDate;
-	public static DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+	public static DateFormat format = new SimpleDateFormat("yyyy.MM.dd");
 //	// 날짜 형식을 String으로 혹은 String을 날짜 형식으로 변환하기 위한 포맷형식이다.
 //	DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 //	// Date 값을 가져와서 String으로 변환한다.
@@ -80,7 +80,7 @@ public class VideoVO {
 
 	public void setReleaseDate(Date releaseDate) {
 		this.releaseDate = releaseDate;
-		this.formatDate = format.format(releaseDate);
+		setformatDate(format.format(releaseDate)); 
 	}
 
 	public String getformatDate() {

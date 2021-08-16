@@ -28,10 +28,11 @@ function func1(title,artist,date){
         <!--여기에 밑줄-->
         <div>
             <p class = "mvlist">M/V LIST</p>
-            <table class = "mvtable" style="padding-right: -80px;">
+            <%-- <table class = "mvtable" style="padding-right: -80px;">
                 <tr>
 		            <c:forEach var="video" items="${mvlist }">
 					<td>
+						<!-- img태그의 src 경로는 .matadata에서 가져오는거다 -->
 						<img alt="${video.title }" src="/img/mvtitleImg/${video.imgFile }"
 						onclick="movie('${video.url}'); func1('${video.title}','${video.artist}','${video.formatDate}');">
 						<b><small>${video.title }</small></b><br>
@@ -39,7 +40,19 @@ function func1(title,artist,date){
 					</td>
 					</c:forEach>
                 </tr>
-            </table>
+            </table> --%>
+            
+            
+		            <c:forEach var="video" items="${mvlist }">
+			
+						<!-- img태그의 src 경로는 .matadata에서 가져오는거다 -->
+						<img alt="${video.title }" src="/img/mvtitleImg/${video.imgFile }"
+						onclick="movie('${video.url}'); func1('${video.title}','${video.artist}','${video.formatDate}');">
+						<b><small>${video.title }</small></b><br>
+                         <small>${video.artist } | ${video.formatDate }</small>
+			
+					</c:forEach>
+
             <button onclick="location.href='/videoAdd'">추가</button><button>수정</button><button>삭제</button>
     	</div>
     </section>
