@@ -167,6 +167,150 @@ footer ul li{
 	width:428px; height:428px; 
 } 
 /*  End!! artist.jsp */
+/*  Start!! artist_detail.jsp */
+
+.artist_topmenu_li{
+    position: fixed;
+    list-style: none;
+    display: flex;
+    right: 0px;
+}
+.artist_topmenu_li li{
+    padding:30px;
+    color:rgb(150, 150, 150);
+    font-family: 'Teko', sans-serif;
+    font-size: 23px;
+}
+.artist_topmenu_li li:hover{
+    color: rgb(77, 76, 77);
+    cursor: pointer;
+}
+.artist_menu{
+    position: relative;
+    margin-top: 0;
+    width: 100%;
+    height: 80vh;
+    padding:40px 0; 
+    margin:0;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+.artist_bigtitle{
+    color:white;
+   padding-right: 0;
+   font-size: 40px;
+   line-height: 55vh;
+   font-weight: bold;
+   margin: 0;
+}
+.artist_bigtitle{
+    /* 따로 빼두기 각각다름! */
+    padding-left: 950px;
+}
+.artist_content{
+    width:80%;
+    padding: 0 15%;
+    justify-content: center;
+}
+.artist_font{
+    font-size: 58px;
+    font-weight: 500px;
+    font-family: 'Playfair Display', serif;
+}
+.artist_table td{
+    padding:50px 60px;
+    /* background-color: aquamarine; */
+}
+.artist_profile_list{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+.artist_name, .artist_works{
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 15px;
+    font-weight: lighter;
+    width:700px;
+    color:gray;
+    
+}
+.artist_birth, .artist_sns{
+    padding-top: 5px;;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:gray;
+}
+.artist_sns a{
+    color:black;
+    padding:5px;
+}
+.artist_works_list{
+    padding-top: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+
+.artist_works_list small{
+    color:gray;
+}
+.artist_works_list img{
+    width:13%;
+    float:left;
+    padding-right: 15px;
+}
+.artist_work_more{
+    background-color: white;
+    border: 1px solid lightgray;
+    padding:10px 50px;
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+}
+.artist_work_more:hover{
+    background-color: rgb(247, 247, 247);
+}
+.artist_mv{
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+}
+
+.artist_mvlist{
+    padding:0;
+    margin:0;
+    
+}
+.artist_mvlist img{
+    width:80%;
+    display: flex;
+    cursor: pointer;
+}
+
+
+.artist_photo_img{
+    padding: 20px 5px !important;
+    display: flex;
+    text-align: center;
+
+}
+.artist_photo_img img{
+    margin:0;
+    width:85%;
+    height: 35vh;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.artist_photo_down_btn{
+    background-color: white;
+    border: 1px solid lightgray;
+    padding:5px 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:gray;
+    margin:20px;
+}
+.artist_photo_down_btn:hover{
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+}
+/*  End!! artist_detail.jsp */
+/* sohee */
 /*  Start!! audition.jsp */
 .audition li{
     display: inline-block;

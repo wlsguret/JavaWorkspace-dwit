@@ -11,7 +11,7 @@ function move(artist){
 
 	<div class="artistList">
 		<div class="artistImg"
-			style="background: url(/img/ArtistImg/IU.jpg) no-repeat;"
+			style="background: url(/img/ArtistImg/iu/IU.jpg) no-repeat;"
 			onclick="move('iu')">
 			<div class="text">
 				<p>IU</p>
