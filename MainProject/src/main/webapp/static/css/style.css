@@ -185,31 +185,23 @@ footer ul li{
     color: rgb(77, 76, 77);
     cursor: pointer;
 }
-.artist_menu{
-    position: relative;
-    margin-top: 0;
-    width: 100%;
-    height: 80vh;
-    padding:40px 0; 
-    margin:0;
-    background-repeat: no-repeat;
-    z-index: -2;
+.artistMainImg{
+	max-height: 100%;
+	max-width: 100%;
+	min-width: 1200px;
+	z-index: -1;
+	position: relative;
 }
 .artist_bigtitle{
-    color:white;
-   padding-right: 0;
-   font-size: 40px;
-   line-height: 55vh;
-   font-weight: bold;
-   margin: 0;
-}
-.artist_bigtitle{
-    /* 따로 빼두기 각각다름! */
-    padding-left: 950px;
+	color:white;
+	font-size: 40px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	margin: 0;
 }
 .artist_content{
-    width:80%;
-    padding: 0 15%;
+    margin: 0 15% auto;
     justify-content: center;
 }
 .artist_font{
@@ -310,7 +302,12 @@ footer ul li{
     background-color: rgb(240, 240, 240);
 }
 /*  End!! artist_detail.jsp */
-/* sohee */
+/* iu */
+ .iu_mv_celebrity, .iu_mv_lilac, .iu_mv_blueming{
+            float: left;
+        }
+/* iu */
+
 /*  Start!! audition.jsp */
 .audition li{
     display: inline-block;
