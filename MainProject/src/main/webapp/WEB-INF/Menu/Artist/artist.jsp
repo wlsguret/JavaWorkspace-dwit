@@ -28,14 +28,15 @@ function move(artist){
 		</div>
 
 		<div class="artistImg"
-			style="background: url(/img/ArtistImg/junghan.jpg) no-repeat;"
+			style="background: url(/img/ArtistImg/junghan/junghan.jpg) no-repeat;"
 			onclick="move('junghan')">
 			<div class="text">
 				<p>JUNGHAN</p>
 			</div>
 		</div>
 		<div class="artistImg"
-			style="background: url(/img/ArtistImg/blackpink.jpg) no-repeat;">
+			style="background: url(/img/ArtistImg/blackpink/blackpink.jpg) no-repeat;"
+			onclick="move('blackpink')">
 			<div class="text">
 				<p>BLACKPINK</p>
 			</div>
@@ -43,14 +44,16 @@ function move(artist){
 		</div>
 
 		<div class="artistImg"
-			style="background: url(/img/ArtistImg/blackpink.jpg) no-repeat;">
+			style="background: url(/img/ArtistImg/blackpink/blackpink.jpg) no-repeat;"
+			onclick="move('blackpink')">
 			<div class="text">
 				<p>BLACKPINK</p>
 			</div>
 		</div>
 
 		<div class="artistImg"
-			style="background: url(/img/ArtistImg/vernon.png) no-repeat;">
+			style="background: url(/img/ArtistImg/vernon.png) no-repeat;"
+			onclick="move('blackpink')">
 			<div class="text">
 				<p>BLACKPINK</p>
 			</div>

@@ -171,17 +171,18 @@ footer ul li{
 
 .artist_topmenu_li{
     position: fixed;
-    list-style: none;
     display: flex;
     right: 0px;
 }
 .artist_topmenu_li li{
     padding:30px;
+}
+.artist_topmenu_li li a{
     color:rgb(150, 150, 150);
     font-family: 'Teko', sans-serif;
     font-size: 23px;
 }
-.artist_topmenu_li li:hover{
+.artist_topmenu_li li a:hover{
     color: rgb(77, 76, 77);
     cursor: pointer;
 }
@@ -211,7 +212,6 @@ footer ul li{
 }
 .artist_table td{
     padding:50px 60px;
-    /* background-color: aquamarine; */
 }
 .artist_profile_list{
     font-family: 'Noto Sans KR', sans-serif;
@@ -561,10 +561,10 @@ position:relative;
 }
 
 .container{
-	display:flex;/*가진 display타입이 뭐든 줄을 안바꾸겠다*/
-	flex-flow:row wrap;/*가로가 다 차면 그래도 줄 바꿔라*/
+	display:flex;/*媛�吏� display���엯�씠 萸먮뱺 以꾩쓣 �븞諛붽씀寃좊떎*/
+	flex-flow:row wrap;/*媛�濡쒓� �떎 李⑤㈃ 洹몃옒�룄 以� 諛붽퓭�씪*/
 }
-.container .mvImg{/*container의 자손들 일괄 세팅*/
+.container .mvImg{/*container�쓽 �옄�넀�뱾 �씪愿� �꽭�똿*/
 	min-width:140px;
 	min-height:150px;
 	padding: 10px;
@@ -575,7 +575,7 @@ position:relative;
 	cursor: pointer;
 }
 @media(max-width:480px){
-	.mvImg{width:100%}/*좁을 때는 너네가 100%.. 이 안에는 px 단위로 잡지 않는다.*/
+	.mvImg{width:100%}/*醫곸쓣 �븣�뒗 �꼫�꽕媛� 100%.. �씠 �븞�뿉�뒗 px �떒�쐞濡� �옟吏� �븡�뒗�떎.*/
 }
 @media(min-width:900px){
 	.mvImg{width:50%}

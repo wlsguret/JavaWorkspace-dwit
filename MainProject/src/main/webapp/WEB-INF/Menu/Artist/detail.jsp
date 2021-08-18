@@ -5,7 +5,7 @@
 	<div>
 		<img alt="" src="/img/ArtistImg/iu/iu_artist.jpg"
 			class="artistMainImg">
-		<h1 class="artist_bigtitle">아이유(IU)</h1>
+		<h1 class="artist_bigtitle">한소희</h1>
 	</div>
 	<div class="artist_content">
 		<table class="artist_table">
@@ -14,8 +14,8 @@
 					<td class="artist_font">Profile</td>
 					<td class="artist_profile_list">
 						<div class="artist_name">
-							<b style="color: black;">IU</b> (아이유, 이지은) &nbsp;&nbsp;&nbsp; 
-							<small>가수 / 탤런트</small>
+							<b style="color: black;">IU</b> (아이유, 이지은) &nbsp;&nbsp;&nbsp; <small>가수
+								/ 탤런트</small>
 						</div>
 						<div class="artist_birth">
 							<small style="font-weight: bolder;">출생</small> &nbsp;&nbsp;&nbsp;
@@ -23,11 +23,11 @@
 						</div>
 						<div class="artist_sns">
 							<small style="font-weight: bolder;">사이트</small>
-							&nbsp;&nbsp;&nbsp; 
-							<small	style="font-weight: bold; color: black;"> 
-								<a href=""><i class="fab fa-instagram"></i></a> 
-								<a href=""><i class="fab fa-twitter"></i></a> 
-								<a href=""><i class="fab fa-youtube"></i></a>
+							&nbsp;&nbsp;&nbsp; <small
+								style="font-weight: bold; color: black;"> <a href=""><i
+									class="fab fa-instagram"></i></a> <a href=""><i
+									class="fab fa-twitter"></i></a> <a href=""><i
+									class="fab fa-youtube"></i></a>
 							</small>
 						</div>
 					</td>
@@ -40,9 +40,8 @@
 						</div>
 						<div class="artist_works_list">
 							<img src="/img/ArtistImg/iu/iu_work_lilac.jpg" alt=""> <br>
-							정규 5집 IU 5th Album 'LILAC' 
-							<small>[라일락], [Coin], [Celebrity]</small><br> 
-							<small style="font-weight: lighter;">2021.03.25</small><br>
+							정규 5집 IU 5th Album 'LILAC' <small>[라일락], [Coin],
+								[Celebrity]</small><br> <small style="font-weight: lighter;">2021.03.25</small><br>
 
 						</div>
 					</td>
@@ -50,29 +49,27 @@
 				<tr>
 					<td></td>
 					<td style="padding: 0 60px;">
-						<div class="artist_works">
+						<div class="artist_works_list">
 							<b style="color: black">2020</b>
 						</div>
 						<div class="artist_works_list">
 							<img src="/img/ArtistImg/iu/iu_work_iland.jpg" alt=""> <br>
-							I-LAND Part 1 Signal Song 
-							<small> [I-LAND]</small><br> 
-							<small style="font-weight: lighter;">2020.06.19</small>
+							I-LAND Part 1 Signal Song <small> [I-LAND]</small><br> <small
+								style="font-weight: lighter;">2020.06.19</small>
 						</div> <br>
 						<div class="artist_works"></div>
 						<div class="artist_works_list">
 							<img src="/img/ArtistImg/iu/iu_work_eight.jpg" alt=""> <br>
-							에잇
-							<small> [에잇 (Prod.&Feat. SUGA of BTS)]</small><br> 
-							<small style="font-weight: lighter;">2020.05.06</small><br>
+							에잇<small> [에잇 (Prod.&Feat. SUGA of BTS)]</small><br> <small
+								style="font-weight: lighter;">2020.05.06</small><br>
+
 						</div> <br> <br>
 						<div class="artist_works">
 							<b style="color: black">2019</b>
 						</div>
 						<div class="artist_works_list">
 							<img src="/img/ArtistImg/iu/iu_work_lovepoem.jpg" alt=""> <br>
-							미니 5집 Love poem 
-							<small> [Blueming], [Love poem]</small><br>
+							미니 5집 Love poem <small> [Blueming], [Love poem]</small><br>
 							<small style="font-weight: lighter;">2019.11.18</small>
 						</div> <br> <br> <br>
 						<div style="padding-left: 200px;">
@@ -80,10 +77,12 @@
 								MORE &nbsp;&nbsp;<small style="font-size: 4px;">▼</small>
 							</button>
 						</div>
+
 					</td>
+
 				</tr>
 				<tr>
-					<td colspan="2" class="artist_font">M/V</td>
+					<td colspan="2" class="artist_mv">M/V
 				</tr>
 				<tr>
 					<td colspan="2" class="artist_mvlist">
@@ -141,18 +140,20 @@
 					<td class="artist_photo_img">
 						<div class="artist_photo_img_down">
 							<img src="/img/ArtistImg/iu/iu_photo_image3.jpg" alt=""><br>
-							<a href="/img/ArtistImg/iu/iu_photo_image3.jpg" download><button class="artist_photo_down_btn">DOWNLOAD ↓</button></a>
+							<button class="artist_photo_down_btn">DOWNLOAD ↓</button>
 						</div>
 						<div class="artist_photo_img_down">
 							<img src="/img/ArtistImg/iu/iu_lilac_image2.jpg" alt=""><br>
-							<a href="/img/ArtistImg/iu/iu_lilac_image2.jpg" download><button class="artist_photo_down_btn">DOWNLOAD ↓</button></a>
+							<button class="artist_photo_down_btn">DOWNLOAD ↓</button>
 						</div>
 						<div class="artist_photo_img_down">
 							<img src="/img/ArtistImg/iu/iu_lovepoem_image.jpg" alt=""><br>
-							<a href="/img/ArtistImg/iu/iu_lovepoem_image.jpg" download><button class="artist_photo_down_btn">DOWNLOAD ↓</button></a>
+							<button class="artist_photo_down_btn">DOWNLOAD ↓</button>
 						</div> <br>
 					</td>
 				</tr>
+
+
 			</tbody>
 		</table>
 	</div>
