@@ -2,12 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <script>
-function movie(src){
+function movie(src,id){
     document.getElementById("mainMV").src = src;
 }
 function func1(title,artist,date){
 	document.getElementById("mv_tit").innerHTML = title;
 	document.getElementById("mv_cont").innerHTML = artist+" | "+date;
+}
+function edit(video){
+	alert(video.id)
 }
 </script>
 <main>    
@@ -30,13 +33,22 @@ function func1(title,artist,date){
 			<c:forEach var="video" items="${mvlist }">
 			<!-- img태그의 src 경로는 .matadata에서 가져오는거다 -->
 				<div class="mvImg">
-					<img alt="${video.title }" src="/img/mvtitleImg/${video.imgFile }"
-					onclick="movie('${video.url}'); func1('${video.title}','${video.artist}','${video.formatDate}');">
-					<b><small>${video.title }</small></b><br>
-					<small>${video.artist } | ${video.formatDate }</small>
+						<img alt="${video.title }" src="/img/mvtitleImg/${video.imgFile }"
+						onclick="movie('${video.url}'); func1('${video.title}','${video.artist}','${video.formatDate}');">
+						<b><small>${video.title }</small></b><br>
+						<small>${video.artist } | ${video.formatDate }</small>
+					<form action="/videoUpdate" method="post">
+						<input type="hidden" value="${video.id }">
+						<input type="hidden" value="${video.url }">
+						<input type="hidden" value="${video.imgFile }">
+						<input type="hidden" value="${video.artist }">
+						<input type="hidden" value="${video.title }">
+						<input type="hidden" value="${video.releaseDate }">
+						<input type="submit" value="@">
+					</form>
 				</div>
 			</c:forEach>
     	</div>
-        <button onclick="location.href='/videoAdd'">추가</button><button>수정</button><button>삭제</button>
+        <button onclick="location.href='/videoAdd'">추가</button>
     </section>
 </main>

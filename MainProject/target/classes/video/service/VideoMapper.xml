@@ -7,7 +7,10 @@
 	<insert id="videoInsert" parameterType="video.model.VideoVO">
 		insert into mvlist values(
 		mvlist_seq.nextval, #{url}, #{imgFile},
-		#{artist}, #{title}, to_date(#{formatDate},'yyyy.mm.dd'), 0)
+		#{artist}, #{title}, to_date(#{formatDate},'yyyy.mm.dd'))
 	</insert>
-
+	<update id="videoUpdate" parameterType="video.model.VideoVO">
+		update mvlist set url=#{url}, imgfile=#{imgFile}, artist=#{artist}, 
+		title=#{title}, releaseDate=to_date(#{formatDate},'yyyy.mm.dd') where id=#{id}
+	</update>
 </mapper>

@@ -112,7 +112,6 @@
 					</tr>
 					<tr>
 						<td colspan="2" class = "artist_font">M/V 
-						<button class = "mvmorebtn">more</button>
 						</td>	
 					</tr>
 					<tr>

@@ -68,12 +68,56 @@ public class VideoController {
                     mFile.transferTo(new File(dir+File.separator+ sysFileName));
                     mFile.transferTo(new File(realPath+File.separator+sysFileName));
                     System.out.println("원본파일명: " + orgFileName + ", 시스템파일명: " + sysFileName);
-                    System.out.println(service.videoInsert(video));
+                    if(service.videoInsert(video)>0) {
+                    	System.out.println("DB입력 성공");
+                    }
                 }catch(Exception e){
                 	e.printStackTrace();
                 }
             }
         }
+
+        return "redirect:/video";
+    }
+	
+	@RequestMapping("/videoUpdate")
+	public String videoUpdate(VideoVO video, MultipartHttpServletRequest request) {
+		System.out.println(video);
+//		String realPath = request.getSession().getServletContext().getRealPath("/static/img/mvtitleImg/");
+//		String rootUploadDir = "C:\\Users\\admin\\git\\JavaWorkspace-dwit\\MainProject\\src\\main\\webapp\\static\\img";
+//        
+//        File dir = new File(rootUploadDir + "\\mvtitleImg"); 
+//        
+//        if(!dir.exists()) { //업로드 디렉토리가 존재하지 않으면 생성
+//            dir.mkdirs();
+//        }
+//        
+//        Iterator<String> iterator = request.getFileNames(); //업로드된 파일정보 수집(2개 - file1,file2)
+//        
+//        String uploadFileName;
+//        MultipartFile mFile = null;
+//        String orgFileName = ""; //진짜 파일명
+//        String sysFileName = ""; //변환된 파일명
+//        
+//        while(iterator.hasNext()) {            
+//            uploadFileName = iterator.next();
+//            mFile = request.getFile(uploadFileName);
+//            orgFileName = mFile.getOriginalFilename();    
+//            if(orgFileName != null && orgFileName.length() != 0) {
+//                sysFileName = video.getImgFile();
+//                try {
+//                    mFile.transferTo(new File(dir+File.separator+ sysFileName));
+//                    mFile.transferTo(new File(realPath+File.separator+sysFileName));
+//                    System.out.println("원본파일명: " + orgFileName + ", 시스템파일명: " + sysFileName);
+//                    if(service.videoInsert(video)>0) {
+//                    	System.out.println("DB입력 성공");
+//                    }
+//                }catch(Exception e){
+//                	e.printStackTrace();
+//                }
+//            }
+//        }
+
 
         return "redirect:/video";
     }
