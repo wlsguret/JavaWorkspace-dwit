@@ -588,3 +588,17 @@ position:relative;
 }
 
 /*  End!! video.jsp */
+/*  Start!! notice.jsp */
+#notice_main .notice_select {
+	display: flex;
+}
+
+#notice_main .notice_select li {
+	margin: 10px;
+}
+
+#notice_main .notice_content li div  {
+	background-color: blue;
+	display: none;
+}
+/*  End!! notice.jsp */
