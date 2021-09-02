@@ -589,16 +589,56 @@ position:relative;
 
 /*  End!! video.jsp */
 /*  Start!! notice.jsp */
-#notice_main .notice_select {
+#notice_main ul {
+	width: 80%;
+	margin: auto;
+}
+
+.notice_select {
 	display: flex;
+	border-bottom: 1px solid gray;
 }
 
-#notice_main .notice_select li {
-	margin: 10px;
+.notice_select li {
+	padding: 8px 30px;
+	cursor: pointer;
 }
 
-#notice_main .notice_content li div  {
-	background-color: blue;
+.notice_select1 {
+	background-color: rgb(241, 241, 241);
+	border-top: 1px solid gray;
+	border-left: 1px solid gray;
+}
+
+.notice_select2 {
+	border-top: 1px solid gray;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+}
+
+.notice_header {
+	display: flex;
+	background-color: rgb(241, 241, 241);
+    border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	font-weight: bold;
+	justify-content: space-between;
+	padding: 10px 0 10px 40px;
+	margin-top: 10px; 
+}
+
+.notice li div, .community li div  {
+	display: none;
+}
+
+.notice_content {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.community {
 	display: none;
 }
 /*  End!! notice.jsp */

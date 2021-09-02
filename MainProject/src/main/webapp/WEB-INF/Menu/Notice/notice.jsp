@@ -4,13 +4,15 @@
 <script type="text/javascript">
 function select(num){
 	if(num == 1){
-		console.log(num)	
 		$('.notice').css({"display": "block"})
 		$('.community').css({"display": "none"})
+		$('.notice_select1').css({"background-color": "rgb(241, 241, 241)"})
+		$('.notice_select2').css({"background-color": "white"})
 	} else if(num == 2){
-		console.log(num)
 		$('.community').css({"display": "block"})
 		$('.notice').css({"display": "none"})
+		$('.notice_select1').css({"background-color": "white"})
+		$('.notice_select2').css({"background-color": "rgb(241, 241, 241)"})
 	}
 }
 function read(num){
@@ -24,18 +26,37 @@ function read(num){
 <main id="notice_main">
 	<h1 class="menutitle">NOTICE</h1>
 	
-	<ul class="notice_select">
-		<li onclick="select('1')" id="notice_select_notice">notice</li>
-		<li onclick="select('2')" id="notice_select_community">community</li>
-	</ul>
-	<ul class="notice_content notice" style="display: ">
+	<div>
+		<ul class="notice_select" style="margin-bottom: 10px">
+			<li class="notice_select1" onclick="select('1')">ARTIST</li>
+			<li class="notice_select2" onclick="select('2')">MEMBER</li>
+		</ul>
+		<ul class="notice_header">
+			<li>NO</li>
+			<li>TITLE</li>
+			<li>DATE</li>
+		</ul>
+	</div>	
+
+	<%-- <ul class="notice">
 		<c:forEach var="board" items="${noticeList }">
-		<li onclick="read('content${board.idx }')"><p>${board.title }</p><div id="content${board.idx }">${board.content })</div></li>	
+		<li onclick="read('notice${board.idx }')"><p>${board.title }</p><div id="notice${board.idx }">${board.content })</div></li>	
+		</c:forEach>
+	</ul> --%>
+	
+	<ul class="notice">
+		<c:forEach var="board" items="${noticeList }">
+			<ul class="notice_content" onclick="read('notice${board.idx }')">
+				<li>${board.idx }</li>
+				<li>${board.title }</li>
+				<li>${board.writeDay }</li>
+			</ul>	
 		</c:forEach>
 	</ul>
-	<ul class="notice_content community">
+	
+	<ul class="community">
 		<c:forEach var="board" items="${communityList }">
-		<li onclick="read('content${board.idx }')"><p>${board.title }</p><div id="content${board.idx }">${board.content })</div></li>	
+		<li onclick="read('community${board.idx }')"><p>${board.title }</p><div id="community${board.idx }">${board.content })</div></li>	
 		</c:forEach>
 	</ul>
 </main>
